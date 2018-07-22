@@ -28,6 +28,7 @@ in
       ./cli.nix
       ./messaging.nix
       ./audio.nix
+      ./python.nix
     ];
 
   # SSD options
