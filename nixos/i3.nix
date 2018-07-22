@@ -28,5 +28,6 @@
     xfce.thunar-dropbox-plugin
     xfce.thunar-archive-plugin
     compton
+    parcellite
     ];
 }
