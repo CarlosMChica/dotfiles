@@ -175,10 +175,9 @@ bindsym --release $mod+F5 exec maim -s ~/Screenshots/screenshot_$(date +"%Y-%m-%
 bindsym --release $mod+F6 exec maim ~/Screenshots/screenshot_$(date +"%Y-%m-%d-%H_%M_%S").png
 
 # Volume keys
-bindsym XF86AudioRaiseVolume exec pulseaudio-ctl up
-bindsym XF86AudioLowerVolume exec pulseaudio-ctl down
-bindsym XF86AudioMute exec pulseaudio-ctl mute
-bindsym XF86AudioMicMute exec pulseaudio-ctl mute
+bindsym XF86AudioRaiseVolume exec ponymix increase 5
+bindsym XF86AudioLowerVolume exec ponymix decrease 5
+bindsym XF86AudioMute exec ponymix toggle
 
 bindsym $mod+F3 exec ponymix increase 5
 bindsym $mod+F2 exec ponymix decrease 5
