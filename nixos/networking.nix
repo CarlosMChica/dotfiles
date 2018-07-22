@@ -21,5 +21,6 @@ in
     networkmanagerapplet
     openresolv
     bind
+    wirelesstools
   ];
 }
