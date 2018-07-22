@@ -62,12 +62,6 @@ killByName() {
   pkill "$1"
 }
 
-showWifiPassword() {
-  local path='/etc/NetworkManager/system-connections/'
-
-  sudo grep -rH '^psk=' $path | awk -F '/' '{print $5}'
-}
-
 showPublicIp() {
   local content
   local ip
