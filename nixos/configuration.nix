@@ -99,7 +99,7 @@ in
      uid = 1000;
      group = "users";
      extraGroups = [
-       "wheel" "networkmanager" "systemd-journal" "audio" "video" "disk"
+       "wheel" "networkmanager" "systemd-journal" "audio" "video" "disk" "docker"
      ];
      home = "/home/${username}";
      createHome = true;
