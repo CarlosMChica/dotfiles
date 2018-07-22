@@ -19,3 +19,8 @@ wi_off() {
 wi_on() {
   nmcli radio wifi on
 }
+
+showWifiPassword() {
+  local path='/etc/NetworkManager/system-connections/'
+  sudo grep -rH '^psk=' $path | awk -F '/' '{print $5}'
+}

@@ -4,6 +4,8 @@ relativePath="$DOTFILES_LOCATION/system"
 source "$relativePath/update.sh"
 source "$relativePath/wifi.sh"
 source "$relativePath/bluetooth.sh"
+source "$relativePath/sound.sh"
+source "$relativePath/screen.sh"
 
 if [[ $(uname) == "Darwin" ]]; then
   alias ls='ls -G'
@@ -108,4 +110,29 @@ portOfProcessNamed() {
 
 updateDns() {
   sudo resolvconf -u
+}
+
+findFileByContent() {
+  sudo grep -rinl "$2" -e "$1"
+}
+
+findFileByName() {
+  sudo find "$2" -iname "*$1*" -type f
+}
+
+disableIpV6() {
+  sudo sh -c 'echo 1 > /proc/sys/net/ipv6/conf/wlp3s0/disable_ipv6'
+}
+
+showProcessPort() {
+  netstat -tlpn  | grep "$1"
+}
+
+showLargestFiles() {
+  if [[ -n "$1" ]]; then
+    COUNT=$1
+  else
+    COUNT=5
+  fi
+  sudo find -type f -exec du -Sh {} + | sort -rh | head -n $COUNT
 }
