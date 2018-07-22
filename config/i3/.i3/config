@@ -31,6 +31,7 @@ gaps inner 10
 assign [instance="whatsapp-desktop|yakyak"] $WS5
 assign [instance="slack"] $WS7
 assign [class="Google-chrome"] $WS2
+assign [class="chromium"] $WS2
 assign [class="jetbrains(?)"] $WS3
 assign [instance="transmission-gtk"] $WS9
 assign [instance="vlc"] $WS8
@@ -336,7 +337,7 @@ bar {
     separator #D8DEE9
     background #3B4252
     statusline #D8DEE9
-    #name              #border  #background  #text
+    #name
     focused_workspace  #839496  #8394966     #eee8d5
     active_workspace   #839496  #8394966     #eee8d5
     inactive_workspace #3B4252  #3B4252      #eee8d5
