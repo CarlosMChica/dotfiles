@@ -19,6 +19,7 @@
     taskwarrior
     tasksh
     xsel
+    lm_sensors
   ];
 
   programs.bash.enableCompletion = true;
