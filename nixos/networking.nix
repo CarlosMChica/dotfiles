@@ -17,6 +17,9 @@ in
   # networking.firewall.enable = false;
 
   environment.systemPackages = with pkgs; [
-    iw networkmanagerapplet openresolv
+    iw
+    networkmanagerapplet
+    openresolv
+    bind
   ];
 }
