@@ -4,6 +4,14 @@
   services.xserver.windowManager.i3 = {
     package = pkgs.i3-gaps;
     enable = true;
+    extraSessionCommands = ''
+      compton -c -i 0.95 -b &
+      dropbox &
+      parcellite -n &
+      chromium &
+      slack &
+      nm-applet &
+    '';
   };
 
   environment.systemPackages = with pkgs; [
