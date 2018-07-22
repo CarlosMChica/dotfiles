@@ -12,6 +12,7 @@ if [[ $(uname) == "Darwin" ]]; then
 else
   alias ls='ls --color=auto'
 fi
+
 alias ll='exa'
 alias la='ll'
 alias exa='exa -bghlaU --git --group-directories-first'
@@ -23,6 +24,15 @@ alias dotfiles='(cd "$DOTFILES_LOCATION" && emacs -nw)'
 alias ffs='sudo $(fc -ln -1)'
 alias shortcuts="$DOTFILES_LOCATION/config/shortcuts/shortcuts.sh"
 alias cls='printf "\033c"'
+alias wgup='sudo wg-quick up wg0-client'
+alias wgdown='sudo wg-quick down wg0-client'
+alias wgCoduranceUp='sudo wg-quick up codu-client'
+alias wgCoduranceDown='sudo wg-quick down codu-client'
+alias ovpnup='systemctl start openvpn-client@streisand.service'
+alias ovpndown='systemctl stop openvpn-client@streisand.service'
+alias mountWindows='sudo mount /dev/sda4 /windows'
+alias emptyTrash='rm -rf ~/.local/share/Trash/*'
+alias restartX='systemctl restart lightdm'
 
 autogeneratePassword () {
   LC_CTYPE=C tr -dc "[:alnum:]" < /dev/urandom | fold "-w${1:-32}" | head -1
