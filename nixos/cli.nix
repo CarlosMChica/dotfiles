@@ -18,6 +18,7 @@
     neomutt
     taskwarrior
     tasksh
+    xsel
   ];
 
   programs.bash.enableCompletion = true;
