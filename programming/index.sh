@@ -13,7 +13,7 @@ source "$relativePath/java.sh"
 source "$relativePath/haskell.sh"
 source "$relativePath/editors.sh"
 source "$relativePath/git-alias.sh"
-source "/usr/local/bin/git-completion.bash"
+# source "/usr/local/bin/git-completion.bash"
 source "$relativePath/git-alias-custom.sh"
 source "$relativePath/ssl.sh"
 
