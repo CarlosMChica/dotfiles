@@ -18,8 +18,6 @@ alias la='ll'
 alias exa='exa -bghlaU --git --group-directories-first'
 alias grep="grep --color=auto"
 alias connectvpn='sudo toggle-openvpn.sh'
-alias wireup='sudo wg-quick up wg0-client'
-alias wiredown='sudo wg-quick down wg0-client'
 alias dotfiles='(cd "$DOTFILES_LOCATION" && emacs -nw)'
 alias ffs='sudo $(fc -ln -1)'
 alias shortcuts="$DOTFILES_LOCATION/config/shortcuts/shortcuts.sh"
