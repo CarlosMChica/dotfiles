@@ -7,4 +7,8 @@
     urxvt_font_size
     rxvt_unicode
   ];
+
+  systemd.user.services.urxvtd = {
+    enable = true;
+  };
 }
