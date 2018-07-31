@@ -22,5 +22,7 @@ in
     openresolv
     bind
     wirelesstools
+    wireguard
+    linuxHeaders
   ];
 }
