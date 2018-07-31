@@ -37,5 +37,8 @@
     xfce.thunar-archive-plugin
     compton
     parcellite
+
+    transmission_gtk
+    vlc
     ];
 }
