@@ -1,4 +1,4 @@
-(defcustom my-browser "chromium"
+(defcustom my-browser "google-chrome-stable"
   "Current browser"
   :type 'string
   :group 'mysetup)

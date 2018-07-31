@@ -8,7 +8,7 @@
       compton -c -i 0.95 -b &
       dropbox &
       parcellite -n &
-      chromium &
+      google-chrome-stable &
       slack &
       nm-applet &
     '';
