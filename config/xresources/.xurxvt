@@ -16,7 +16,7 @@ URxvt*scrollWithBuffer: true
 URxvt*scrollTtyKeypress: true
 
 !! Extensions
-URxvt.perl-ext-common: default,matcher,resize-font,url-select,keyboard-select,vtwheel
+URxvt.perl-ext-common: default,matcher,resize-font,url-select,keyboard-select,vtwheel,clipboard
 URxvt.colorUL: #5E81AC
 
 !! url-select
@@ -28,6 +28,9 @@ URxvt.matcher.button: 1
 Urxvt*saveLines: 20480
 
 !! Clipboard
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+URxvt.keysym.Shift-Control-C: perl:clipboard:copy
+URxvt.keyboard-select.clipboard: true
 URxvt.clipboard.autocopy: true
 URxvt.iso14755: false
 URxvt.iso14755_52: false
