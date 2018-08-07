@@ -3,11 +3,13 @@
 let
   userModule = (import ./user.nix);
   hostname = userModule.hostname;
+  wireguardInterfaces = userModule.wireguardInterfaces;
 in
 {
   networking = {
     hostName = hostname;
     networkmanager.enable = true;
+    wireguard.interfaces = wireguardInterfaces;
   };
 
   # Open ports in the firewall.
