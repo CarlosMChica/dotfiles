@@ -5,6 +5,7 @@ let
   username = userModule.name;
   rootPartitionUUID = userModule.rootPartitionUUID;
   n = pkgs.callPackage ./pkgs/npackagemanager { };
+  variety = pkgs.callPackage ./pkgs/variety { };
 in
 {
   imports =
@@ -70,7 +71,7 @@ in
   # $ nix search
 
   environment.systemPackages = with pkgs; [
-    wget vim htop imagemagick n gcc gnumake binutils
+    wget vim htop imagemagick n gcc gnumake binutils variety
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
