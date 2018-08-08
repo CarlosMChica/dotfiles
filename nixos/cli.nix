@@ -20,6 +20,7 @@
     tasksh
     xsel
     lm_sensors
+    ag
   ];
 
   programs.bash.enableCompletion = true;
