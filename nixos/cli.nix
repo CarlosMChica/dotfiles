@@ -1,5 +1,8 @@
 { config, pkgs, ... }:
 
+let
+  powerline-hs = pkgs.haskellPackages.callPackage ./pkgs/powerline-hs { };
+in
 {
   environment.systemPackages = with pkgs; [
     shellcheck
@@ -21,6 +24,9 @@
     xsel
     lm_sensors
     ag
+    powerline-hs
+    powerline-go
+    python36Packages.powerline
   ];
 
   programs.bash.enableCompletion = true;

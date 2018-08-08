@@ -9,5 +9,6 @@
     haskellPackages.stylish-haskell
     haskellPackages.hlint
     haskellPackages.hoogle
+    haskellPackages.cabal2nix
   ];
 }
