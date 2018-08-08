@@ -9,7 +9,7 @@ in
     src = pkgs.fetchgit {
       url = "https://github.com/rdnetto/powerline-hs.git";
       rev = "v${version}";
-      sha256 = "08gm6x1ln0gnf0dkd853a70m81j1hjf0mqqz5ia3nwfc81nir5lh";
+      sha256 = "1h0ifz7xpj0vrxvzxw0jijbl9gi6yx1yfg3xxxi5x61jy4k4bygq";
       fetchSubmodules = true;
       leaveDotGit = true;
       deepClone = true;
@@ -41,6 +41,6 @@ in
       xdg-basedir
     ];
     doCheck = false;
-    executableSystemDepends = [ pkgs.git pkgs.python36Packages.powerline ];
+    executableSystemDepends = [ pkgs.git ];
     license = stdenv.lib.licenses.asl20;
   }
