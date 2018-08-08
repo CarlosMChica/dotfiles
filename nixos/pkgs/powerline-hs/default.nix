@@ -1,4 +1,12 @@
-{ mkDerivation, stdenv, pkgs, fetchFromGitHub, base, aeson, basic-prelude, download, file-embed, git-embed, glob-posix, network, network-info, optparse-applicative, rainbow, safe, scientific, strict, text, unordered-containers, vector, xdg-basedir, tasty, tasty-hunit, ... }:
+{ mkDerivation, aeson, base, basic-prelude, bytestring, containers
+, criterion, directory, download, file-embed, filepath, git-embed
+, glob-posix, MissingH, network, network-info, optparse-applicative
+, process, rainbow, safe, scientific, stdenv, strict, tasty
+, tasty-hunit, template-haskell, text, time, transformers, unix
+, unordered-containers, vector, xdg-basedir, pkgs
+}:
+
+#{ mkDerivation, stdenv, pkgs, fetchFromGitHub, base, aeson, basic-prelude, download, file-embed, git-embed, glob-posix, network, network-info, optparse-applicative, rainbow, safe, scientific, strict, text, unordered-containers, vector, xdg-basedir, tasty, tasty-hunit, ... }:
 
 let
   glob-not-checked = pkgs.haskell.lib.dontCheck glob-posix;
@@ -16,31 +24,22 @@ in
     };
     isLibrary = false;
     isExecutable = true;
+    enableSharedExecutables = false;
+    enableSharedLibraries = false;
     executableHaskellDepends = [
-      base
-      aeson
-      basic-prelude
-      aeson
-      basic-prelude
-      download
-      file-embed
-      git-embed
-      glob-not-checked
-      network
-      network-info
-      optparse-applicative
-      rainbow
-      safe
-      scientific
-      strict
-      tasty
-      tasty-hunit
-      text
-      unordered-containers
-      vector
-      xdg-basedir
+      aeson base basic-prelude bytestring containers directory download
+      file-embed filepath git-embed glob-not-checked network network-info
+      optparse-applicative process rainbow safe scientific strict
+      template-haskell text time transformers unix unordered-containers
+      vector xdg-basedir
     ];
+    testHaskellDepends = [
+      base basic-prelude process tasty tasty-hunit
+    ];
+    benchmarkHaskellDepends = [ base criterion MissingH process ];
     doCheck = false;
     executableSystemDepends = [ pkgs.git ];
+    homepage = "https://github.com/rdnetto/powerline-hs";
+    description = "Powerline-compatible shell prompt generator";
     license = stdenv.lib.licenses.asl20;
   }

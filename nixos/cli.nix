@@ -25,6 +25,8 @@ in
     lm_sensors
     ag
     powerline-hs
+    powerline-go
+    python36Packages.powerline
   ];
 
   programs.bash.enableCompletion = true;
