@@ -18,6 +18,7 @@
   environment.systemPackages = with pkgs; [
     xorg.xkill
     xorg.xbacklight
+    xorg.xwininfo
     acpi
 
     dmenu
