@@ -10,6 +10,7 @@
       parcellite -n &
       google-chrome-stable &
       slack &
+      rambox &
       nm-applet &
     '';
   };
