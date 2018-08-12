@@ -6,6 +6,7 @@ let
   rootPartitionUUID = userModule.rootPartitionUUID;
   n = pkgs.callPackage ./pkgs/npackagemanager { };
   variety = pkgs.callPackage ./pkgs/variety { };
+  acestreamengine = pkgs.callPackage ./pkgs/acestreamengine { };
 in
 {
   imports =
@@ -71,7 +72,7 @@ in
   # $ nix search
 
   environment.systemPackages = with pkgs; [
-    wget vim htop imagemagick n gcc gnumake binutils variety
+    wget vim htop imagemagick n gcc gnumake binutils variety acestreamengine
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
