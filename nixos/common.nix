@@ -1,9 +1,6 @@
 { config, pkgs, ... }:
 
 let
-  userModule = (import ./user.nix);
-  username = userModule.name;
-  rootPartitionUUID = userModule.rootPartitionUUID;
   n = pkgs.callPackage ./pkgs/npackagemanager { };
   variety = pkgs.callPackage ./pkgs/variety { };
   acestreamengine = pkgs.callPackage ./pkgs/acestreamengine { };
@@ -11,7 +8,6 @@ in
 {
   imports =
     [
-      /etc/nixos/hardware-configuration.nix
       ./networking.nix
       ./i3.nix
       ./urxvt.nix
@@ -31,32 +27,9 @@ in
       ./messaging.nix
       ./audio.nix
       ./python.nix
+      ./javascript.nix
+      ./users.nix
     ];
-
-  # SSD options
-  fileSystems."/".options = [ "noatime" "nodiratime" "discard" ];
-
-  boot = {
-    loader = {
-      systemd-boot.enable = true;
-      efi.canTouchEfiVariables = true;
-      grub = {
-        enable = true;
-        version = 2;
-        device = "nodev";
-        efiSupport = true;
-      };
-    };
-    initrd.luks.devices = [
-      {
-        name = "root";
-        # blkid gives you back the disk id
-        device = "/dev/disk/by-uuid/${rootPartitionUUID}";
-        preLVM = true;
-        allowDiscards = true;
-      }
-    ];
-  };
 
   # Select internationalisation properties.
   # i18n = {
@@ -72,7 +45,7 @@ in
   # $ nix search
 
   environment.systemPackages = with pkgs; [
-    wget vim htop imagemagick n gcc gnumake binutils variety acestreamengine
+    wget vim htop imagemagick n gcc gnumake binutils variety # acestreamengine
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -95,18 +68,6 @@ in
   };
   # Enable touchpad support.
   # services.xserver.libinput.enable = true;
-
-  users.extraUsers.${username} = {
-     isNormalUser = true;
-     uid = 1000;
-     group = "users";
-     extraGroups = [
-       "wheel" "networkmanager" "systemd-journal" "audio" "video" "disk" "docker"
-     ];
-     home = "/home/${username}";
-     createHome = true;
-     packages = with pkgs; [ stow ];
-  };
   security.sudo.configFile = "%wheel ALL=(ALL) ALL";
 
   nixpkgs.config.allowUnfree = true;
