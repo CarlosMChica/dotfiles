@@ -21,11 +21,11 @@ URxvt.colorUL: #5E81AC
 
 !! url-select
 URxvt.keysym.M-u: perl:url-select:select_next
-URxvt.url-select.launcher: /usr/bin/xdg-open
+URxvt.url-select.launcher: /run/current-system/sw/bin/xdg-open
 URxvt.url-select.underline: true
-URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.url-launcher: /run/current-system/sw/bin/xdg-open
 URxvt.matcher.button: 1
-Urxvt*saveLines: 20480
+Urxvt*saveLines: 65535
 
 !! Clipboard
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
