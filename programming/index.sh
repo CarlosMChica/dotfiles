@@ -17,6 +17,5 @@ source "$relativePath/git-alias.sh"
 source "$relativePath/git-alias-custom.sh"
 source "$relativePath/ssl.sh"
 
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
-[ -f /usr/share/autojump/autojump.bash ] && . /usr/share/autojump/autojump.bash
-[ -f /etc/profile.d/autojump.bash ] && . /etc/profile.d/autojump.bash
+AUTOJUMP_PATH=$(readlink -f "$(which autojump)")
+. "${AUTOJUMP_PATH%bin/*}/etc/profile.d/autojump.sh"
