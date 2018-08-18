@@ -6,6 +6,7 @@
     networkmanager.enable = true;
   };
 
+  networking.firewall.enable = false;
   environment.systemPackages = with pkgs; [
     iw
     networkmanagerapplet
