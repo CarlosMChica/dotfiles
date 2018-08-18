@@ -3,7 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
     openjdk
-    openjdk10
+#    openjdk10
     maven
     gradle
     jetbrains.idea-ultimate

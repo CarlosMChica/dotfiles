@@ -45,7 +45,7 @@ in
   # $ nix search
 
   environment.systemPackages = with pkgs; [
-    wget vim htop imagemagick n gcc gnumake binutils variety # acestreamengine
+    wget vim htop imagemagick n gnumake binutils variety # acestreamengine
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

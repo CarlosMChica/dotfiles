@@ -8,7 +8,6 @@ in
     shellcheck
     autojump
     exa
-    dropbox-cli
     unzip
     unrar
     jq
