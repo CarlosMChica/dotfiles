@@ -1,5 +1,8 @@
 { config, pkgs, ... }:
 
+let
+  i3blocks-hs-contrib = pkgs.haskellPackages.callPackage ./pkgs/i3blocks-hs-contrib { };
+in
 {
   services.xserver = {
     libinput = {
@@ -47,5 +50,6 @@
 
     transmission_gtk
     vlc
+#    i3blocks-hs-contrib
     ];
 }
