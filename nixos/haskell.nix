@@ -10,5 +10,6 @@
     haskellPackages.hlint
     haskellPackages.hoogle
     haskellPackages.cabal2nix
+    haskellPackages.stack2nix
   ];
 }
