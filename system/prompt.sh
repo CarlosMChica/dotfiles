@@ -14,7 +14,7 @@ function _update_ps1() {
   POWERLINE_GO=$(which powerline-go)
   PS1="$($POWERLINE_GO  \
          -error $? \
-         -modules "user,cwd,git,exit,jobs,perms,root,ssh")"
+         -modules "user,cwd,git,exit,jobs,perms,root,ssh,nix-shell")"
 }
 
 if [ "$TERM" != "linux" ]; then
