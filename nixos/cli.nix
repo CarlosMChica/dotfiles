@@ -24,9 +24,10 @@ in
     xsel
     lm_sensors
     ag
-    powerline-hs
+#    powerline-hs
+    #python36Packages.powerline
     powerline-go
-    python36Packages.powerline
+    nix-prefetch-git
   ];
 
   programs.bash.enableCompletion = true;
