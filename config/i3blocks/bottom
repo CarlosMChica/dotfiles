@@ -25,7 +25,7 @@
 # The top properties below are applied to every block, but can be overridden.
 # Each block command defaults to the script name to avoid boilerplate.
 #command=/usr/lib/i3blocks/$BLOCK_NAME
-command=$HOME/.i3blocks-scripts/$BLOCK_NAME
+command=$HOME/.local/bin/$BLOCK_NAME
 markup=none
 color=#eee8d5
 
@@ -34,76 +34,69 @@ align=center
 separator=false
 separator_block_width=7
 
+[AirplaneMode]
+interval=5
+
+[separator]
+
 [disk]
 markup=pango
 signal=1
 interval=60
+command=$HOME/.i3blocks-scripts/$BLOCK_NAME
 
 [separator]
 
-[temperature]
+[Temperature]
 interval=5
-min_width= 99.9°C
+label=
+min_width= 99.9 °C
 
 [separator]
 
-[cpu_usage]
-label= 
+[Cpu]
 interval=2
 min_width= 100%
 
 [separator]
 
-[memory]
-label=MEM
-interval=10
-min_width=MEM 10.1G
+[Memory]
+interval=2
+min_width= 16G
 
 [separator]
 
-[wifi]
-command=iwgetid -r
-label=
-interval=5
+[Wifi]
+interval=10
 
 [separator]
 
 [bandwidth]
 min_width=  999K   999K
 interval=3
+command=$HOME/.i3blocks-scripts/$BLOCK_NAME
 
 [separator]
 
-[ip]
-min_width=188.163.3.148
+[Ip]
 interval=30
 
 [separator]
 
-[batterybar]
-label= 
-interval=30
-markup=pango
-min_width=bat: ■■■■■
+[OpenVpn]
+interval=2
 
 [separator]
 
-[dockerd]
-label= 
-command=docker_status.sh
+[Battery]
+interval=30
+
+[separator]
+
+[Docker]
 interval=10
 
 [separator]
 
-[yaourt]
-interval=1800
-label= 
-min_width= 10
-
-[separator]
-
-[audio]
-instance=Master
+[Volume]
 interval=1
-signal=10
-min_width=100%
