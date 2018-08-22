@@ -71,6 +71,10 @@ interval=10
 
 [separator]
 
+[Bandwidth]
+min_width=  999K   999K
+interval=3
+
 [bandwidth]
 min_width=  999K   999K
 interval=3
