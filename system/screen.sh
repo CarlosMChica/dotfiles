@@ -45,7 +45,8 @@ screenMacbookLeftLayout() {
 }
 
 screenLenovoX230Layout() {
-  xrandr --output LVDS1 --mode 1366x768 --pos 2560x312 --rotate normal --output VGA1 --off \
+  xrandr --output LVDS1 --mode 1366x768 --pos 2560x312 --rotate normal --primary\
+         --output VGA1 --off \
          --output eDP1 --off \
          --output VIRTUAL1 --off \
          --output DP1 --off \
