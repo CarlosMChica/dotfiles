@@ -5,7 +5,7 @@ soundHeadphonesOutput() {
 }
 
 soundMonitorOutput() {
-  ponymix set-profile output:hdmi-stereo
+  ponymix set-profile output:hdmi-stereo-extra1
 }
 
 soundTvOutput() {
