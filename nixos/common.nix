@@ -6,6 +6,9 @@ let
   acestreamengine = pkgs.callPackage ./pkgs/acestreamengine { };
 in
 {
+
+  nix.nixPath = ["/home/carlos/.nix-defexpr/channels:nixpkgs=/home/carlos/.nixpkgs-unstable-custom/nixpkgs:nixos-config=/etc/nixos/configuration.nix:/nix/var/nix/profiles/per-user/root/channels:stable=/nix/var/nix/profiles/per-user/root/channels/stable/nixpkgs"];
+
   imports =
     [
       ./networking.nix
@@ -45,7 +48,7 @@ in
   # $ nix search
 
   environment.systemPackages = with pkgs; [
-    wget vim htop imagemagick n gnumake binutils variety # acestreamengine
+    wget vim htop imagemagick gnumake binutils variety # acestreamengine n
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -70,7 +73,14 @@ in
   # services.xserver.libinput.enable = true;
   security.sudo.configFile = "%wheel ALL=(ALL) ALL";
 
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config = {
+    allowUnfree = true;
+    packageOverrides = pkgs: {
+      stable = import <stable> {
+        config = config.nixpkgs.config;
+      };
+    };
+  };
 
   # This value determines the NixOS release with which your system is to be
   # compatible, in order to avoid breaking some software such as database
