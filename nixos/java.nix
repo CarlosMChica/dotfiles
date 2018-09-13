@@ -1,7 +1,6 @@
 { config, pkgs, ... }:
 
 let
-  stable = import <stable> {};
   tomcat7-0-42 = pkgs.stdenv.lib.overrideDerivation pkgs.tomcat7 (oldAttrs : {
     name = "apache-tomcat-7.0.42";
     version = "7.0.42";
@@ -14,12 +13,12 @@ in
 {
   #mangoshop
   networking.hosts = {
-    "127.0.0.1" = [ "localhost.mango.com" "litedb"];
+    "127.0.0.1" = [ "localhost.mango.com" "litedb" "localhost.mangooutlet.com"];
   };
 
   programs.java = {
     enable = true;
-    package = stable.openjdk7;
+    package = pkgs.stable.openjdk7;
   };
 
   environment.systemPackages = with pkgs; [
