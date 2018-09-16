@@ -125,7 +125,8 @@ findFileByName() {
 }
 
 disableIpV6() {
-  sudo sh -c 'echo 1 > /proc/sys/net/ipv6/conf/wlp3s0/disable_ipv6'
+  INTERFACE=$(ip route | awk '/^default/ { print $5 ; exit }')
+  sudo sh -c "echo 1 > /proc/sys/net/ipv6/conf/$INTERFACE/disable_ipv6"
 }
 
 showProcessPort() {
