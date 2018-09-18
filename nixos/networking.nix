@@ -4,9 +4,9 @@
 
   networking = {
     networkmanager.enable = true;
+    nameservers = ["208.67.222.222" "208.67.220.220"];
+    firewall.enable = false;
   };
-  networking.firewall.enable = false;
-
   services.openvpn.servers = {
     coduranceVPN = {
       config = '' config /home/carlos/Downloads/34.242.136.162-direct.ovpn '';
@@ -21,7 +21,6 @@
   environment.systemPackages = with pkgs; [
     iw
     networkmanagerapplet
-    openresolv
     bind
     wirelesstools
     wireguard
