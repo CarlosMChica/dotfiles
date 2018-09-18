@@ -16,6 +16,7 @@ in
       noto-fonts-emoji
       symbola
       nerdfonts
+      font-awesome-ttf
     ];
   };
 }
