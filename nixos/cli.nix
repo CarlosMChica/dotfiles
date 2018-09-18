@@ -23,7 +23,7 @@ in
     xsel
     lm_sensors
     ag
-    aws
+    awscli
 #    powerline-hs
     #python36Packages.powerline
     powerline-go
