@@ -14,7 +14,7 @@
     };
     haskellVPN = {
       config = '' config /home/carlos/Downloads/188.166.3.148-direct.ovpn '';
-      autoStart = false;
+      autoStart = true;
     };
   };
 
