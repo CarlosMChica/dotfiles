@@ -345,13 +345,15 @@ bar {
   }
 }
 
-#office main
+#main
 bar {
   output DP2
   position top
   status_command i3blocks -c ~/dotfiles/config/i3blocks/top_officemain
   workspace_buttons yes
   height 40
+  tray_padding 4
+  tray_output primary
   font pango: xos4 Terminus, FontAwesome Regular 10
   colors {
     separator #D8DEE9
@@ -365,15 +367,14 @@ bar {
   }
 }
 
-#home main
+#home aux1
 bar {
   output DP1
   position top
   status_command i3blocks -c ~/dotfiles/config/i3blocks/top_homemain
   workspace_buttons yes
   height 40
-  tray_padding 13
-  tray_output primary
+  tray_output none
   font pango: xos4 Terminus, FontAwesome Regular 10
   colors {
     separator #D8DEE9
@@ -387,7 +388,7 @@ bar {
   }
 }
 
-#home aux
+#home aux2
 bar {
   output HDMI2
   position top
