@@ -3,7 +3,7 @@
   :type 'string
   :group 'mysetup)
 
-(defcustom my-lines-mode 'normal
+(defcustom my-lines-mode 'relative
   "Type of lines. 'normal or 'relative"
   :group 'mysetup)
 
