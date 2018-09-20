@@ -58,6 +58,9 @@
     (global-set-key (kbd "ESC <f7>") 'intero-uses-at))
 
   (use-package company-ghci :ensure t)
+  (use-package lsp-mode :ensure t)
+  (use-package lsp-haskell :ensure t)
+  (use-package lsp-ui :ensure t)
 
   (custom-set-variables '(haskell-stylish-on-save t))
   (set-compile-for 'haskell-mode-hook "stack test")
@@ -66,7 +69,9 @@
   (add-hook 'haskell-mode-hook 'programming-mode)
   (add-hook 'haskell-mode-hook 'haskell/prettify)
   (add-hook 'haskell-mode-hook 'hs-doc)
-  (add-hook 'haskell-mode-hook 'intero-mode))
+  (add-hook 'haskell-mode-hook 'intero-mode)
+  (add-hook 'haskell-mode-hook 'lsp-ui-mode)
+  (add-hook 'haskell-mode-hook #'lsp-haskell-enable))
 
 (defun hs-doc ()
   (interactive)
