@@ -12,6 +12,8 @@
   # SSD options
   fileSystems."/".options = [ "noatime" "nodiratime" "discard" ];
 
+  hardware.bluetooth.enable = true;
+  
   boot = {
     loader = {
       systemd-boot.enable = true;
