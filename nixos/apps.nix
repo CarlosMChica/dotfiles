@@ -7,5 +7,6 @@
     pinta
     beancount
     fava
+    libreoffice
   ];
 }
