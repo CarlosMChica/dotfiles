@@ -5,5 +5,6 @@
     yarn
     yarn2nix
     nodePackages.tern
+    sass
   ];
 }
