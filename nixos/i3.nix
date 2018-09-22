@@ -47,9 +47,6 @@ in
     xfce.thunar-archive-plugin
     compton
     parcellite
-
-    transmission_gtk
-    vlc
 #    i3blocks-hs-contrib
     ];
 }
