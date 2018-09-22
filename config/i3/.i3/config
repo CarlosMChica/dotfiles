@@ -15,6 +15,10 @@ set $WS8 "8 "
 set $WS9 "9 "
 set $WS0 "10 "
 
+# use workspaces on different monitors
+workspace $WS5 output HDMI2
+workspace $WS2 output DP1
+  
 # Default terminal emulator
 set $TERMINAL urxvt
 
@@ -29,13 +33,11 @@ gaps inner 10
 
 # Apps assigned to workspaces
 assign [instance="whatsapp-desktop|yakyak|rambox"] $WS5
-assign [instance="slack"] $WS7
 assign [class="Google-chrome"] $WS2
 assign [class="chromium"] $WS2
 assign [class="jetbrains(?)"] $WS3
 assign [instance="transmission-gtk"] $WS9
 assign [instance="vlc"] $WS8
-assign [class="wmail"] $WS6
 
 #Apps without borders
 #for_window [class="Firefox"] border 1pixel
