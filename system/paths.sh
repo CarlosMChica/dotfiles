@@ -8,3 +8,5 @@ export PATH=$PATH:"$HOME/.yarn/bin"
 
 export GOPATH="$HOME/go"
 export PATH="${PATH}:$GOPATH/bin"
+export BAT_PAGER="less"
+export BAT_THEME="zenburn"

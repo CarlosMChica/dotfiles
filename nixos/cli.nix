@@ -28,6 +28,7 @@ in
     #python36Packages.powerline
     powerline-go
     nix-prefetch-git
+    bat
   ];
 
   programs.bash.enableCompletion = true;

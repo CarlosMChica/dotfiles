@@ -13,6 +13,7 @@ else
   alias ls='ls --color=auto'
 fi
 
+alias cat='bat'
 alias ll='exa'
 alias la='ll'
 alias exa='exa -bghlaU --git --group-directories-first'
