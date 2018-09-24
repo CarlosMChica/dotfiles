@@ -6,5 +6,6 @@
     yarn2nix
     nodePackages.tern
     sass
+    nodePackages.grunt-cli
   ];
 }
