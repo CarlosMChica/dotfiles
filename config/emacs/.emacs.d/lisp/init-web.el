@@ -1,3 +1,5 @@
+(require 'init-programming-mode)
+
 (use-package
   web-mode
   :mode "\\.phtml\\'"
