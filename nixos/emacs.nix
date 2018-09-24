@@ -13,5 +13,6 @@ in
 {
   environment.systemPackages = [
     emacs26
+    pkgs.zeal
   ];
 }
