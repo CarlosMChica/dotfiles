@@ -2,6 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
+    nodejs
     yarn
     yarn2nix
     nodePackages.tern
