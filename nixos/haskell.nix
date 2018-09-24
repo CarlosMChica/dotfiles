@@ -4,18 +4,6 @@ let
   hieNix = import (fetchTarball { url = "https://github.com/domenkozar/hie-nix/tarball/master"; }) {};
 in
 {
-  environment.systemPackages = with pkgs; [
-    stack
-    haskellPackages.ghc
-    haskellPackages.cabal-install
-    haskellPackages.hindent
-    haskellPackages.stylish-haskell
-    haskellPackages.hlint
-    haskellPackages.hoogle
-    haskellPackages.cabal2nix
-    hieNix.hies
-    cachix
-  ];
   nix = {
     binaryCaches = [
       "https://cache.nixos.org/"
@@ -26,5 +14,18 @@ in
     ];
     trustedUsers = [ "root" "carlos" ];
   };
+
+  environment.systemPackages = with pkgs; [
+    stack
+    haskellPackages.ghc
+    haskellPackages.cabal-install
+    haskellPackages.hindent
+    haskellPackages.stylish-haskell
+    haskellPackages.hlint
+    haskellPackages.hoogle
+    haskellPackages.cabal2nix
+    cachix
+    hieNix.hies
+  ];
 
 }
