@@ -376,7 +376,7 @@ bar {
   status_command i3blocks -c ~/dotfiles/config/i3blocks/top_homemain
   workspace_buttons yes
   height 40
-  tray_output none
+  tray_output primary
   font pango: xos4 Terminus, FontAwesome Regular 10
   colors {
     separator #D8DEE9
