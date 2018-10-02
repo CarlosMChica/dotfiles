@@ -13,7 +13,7 @@
   fileSystems."/".options = [ "noatime" "nodiratime" "discard" ];
 
   hardware.bluetooth.enable = true;
-  
+
   boot = {
     loader = {
       systemd-boot.enable = true;
@@ -35,5 +35,19 @@
       }
     ];
   };
+
+  services.xserver.xrandrHeads = [
+    "DP1"
+    {
+      output = "DP2";
+      primary = true;
+    }
+    {
+      output = "HDMI2";
+      monitorConfig = ''
+        Option "Rotate" "left"
+      '';
+    }
+  ];
 
 }
