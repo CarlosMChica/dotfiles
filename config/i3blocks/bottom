@@ -99,3 +99,12 @@ interval=10
 
 [Volume]
 interval=1
+
+[separator]
+
+[time]
+command=$HOME/.i3blocks-scripts/$BLOCK_NAME
+label= 
+instance=2643743
+interval=10
+align=center
