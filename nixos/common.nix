@@ -32,6 +32,7 @@ in
       ./python.nix
       ./javascript.nix
       ./users.nix
+      ./bluetooth.nix
     ];
 
   # Select internationalisation properties.
