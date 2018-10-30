@@ -18,7 +18,7 @@ in
 
   programs.java = {
     enable = true;
-    package = pkgs.stable.openjdk7;
+#fix    package = pkgs.stable.openjdk7;
   };
 
   environment.systemPackages = with pkgs; [
