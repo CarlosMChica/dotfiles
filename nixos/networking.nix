@@ -6,6 +6,9 @@
     networkmanager.enable = true;
     nameservers = ["208.67.222.222" "208.67.220.220"];
     firewall.enable = false;
+# check if the following line helps accesing sport365 from home
+#    networking.dnsExtensionMechanism
+    enableIPv6 = false;
   };
   services.openvpn.servers = {
     coduranceVPN = {
