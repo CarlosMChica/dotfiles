@@ -48,11 +48,16 @@
   :mode "\\.hs$"
   :defer t
   :config
+  (use-package
+    intero
+    :ensure t
+    :config
+    (global-set-key (kbd "C-g") 'intero-goto-definition)
+    (global-set-key (kbd "M-n") 'intero-highlight-uses-mode-next)
+    (global-set-key (kbd "M-p") 'intero-highlight-uses-mode-prev)
+    (global-set-key (kbd "ESC <f7>") 'intero-uses-at))
 
   (use-package company-ghci :ensure t)
-  (use-package lsp-mode :ensure t)
-  (use-package lsp-haskell :ensure t)
-  (use-package lsp-ui :ensure t)
 
   (custom-set-variables '(haskell-stylish-on-save t))
   (set-compile-for 'haskell-mode-hook "stack test")
@@ -61,11 +66,12 @@
   (add-hook 'haskell-mode-hook 'programming-mode)
   (add-hook 'haskell-mode-hook 'haskell/prettify)
   (add-hook 'haskell-mode-hook 'hs-doc)
-  (add-hook 'haskell-mode-hook 'lsp-ui-mode)
-  (add-hook 'haskell-mode-hook #'lsp-haskell-enable))
+  (add-hook 'haskell-mode-hook 'intero-mode))
 
 (defun hs-doc ()
   (interactive)
   (setq-local helm-dash-docsets '("Haskell")))
+
+(location-list-buffer (rx bos "*Intero-Help*"))
 
 (provide 'init-haskell)
