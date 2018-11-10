@@ -33,7 +33,7 @@ alias ovpnCoduranceUp='systemctl start openvpn-coduranceVPN.service'
 alias ovpnCoduranceDown='systemctl stop openvpn-coduranceVPN.service'
 alias mountWindows='sudo mount /dev/sda4 /windows'
 alias emptyTrash='rm -rf ~/.local/share/Trash/*'
-alias restartX='systemctl restart lightdm'
+alias restartX='systemctl restart display-manager.service'
 
 autogeneratePassword () {
   LC_CTYPE=C tr -dc "[:alnum:]" < /dev/urandom | fold "-w${1:-32}" | head -1
