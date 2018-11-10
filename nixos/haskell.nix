@@ -1,8 +1,5 @@
 { config, pkgs, ... }:
 
-let
-  hieNix = import (fetchTarball { url = "https://github.com/domenkozar/hie-nix/tarball/master"; }) {};
-in
 {
   nix = {
     binaryCaches = [
@@ -16,8 +13,8 @@ in
   };
 
   environment.systemPackages = with pkgs; [
+    haskell.compiler.ghc862
     stack
-    haskellPackages.ghc
     haskellPackages.cabal-install
     haskellPackages.hindent
     haskellPackages.stylish-haskell
@@ -25,7 +22,6 @@ in
     haskellPackages.hoogle
     haskellPackages.cabal2nix
     cachix
-    hieNix.hies
   ];
 
 }
