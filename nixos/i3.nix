@@ -29,8 +29,7 @@ in
     xorg.xwininfo
     acpi
 
-    dmenu
-    j4-dmenu-desktop
+    dmenu2
 
     dunst
 
