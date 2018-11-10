@@ -39,14 +39,6 @@ interval=5
 
 [separator]
 
-[disk]
-markup=pango
-signal=1
-interval=60
-command=$HOME/.i3blocks-scripts/$BLOCK_NAME
-
-[separator]
-
 [Temperature]
 interval=5
 label=
