@@ -29,6 +29,7 @@ in
     powerline-go
     nix-prefetch-git
     bat
+    youtube-dl
   ];
 
   programs.bash.enableCompletion = true;
