@@ -1,11 +1,11 @@
 #!/bin/bash -e
 
 relativePath="$DOTFILES_LOCATION/system"
-source "$relativePath/update.sh"
 source "$relativePath/wifi.sh"
 source "$relativePath/bluetooth.sh"
 source "$relativePath/sound.sh"
 source "$relativePath/screen.sh"
+source "$relativePath/acestream.sh"
 
 if [[ $(uname) == "Darwin" ]]; then
   alias ls='ls -G'
