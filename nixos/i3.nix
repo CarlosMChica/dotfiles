@@ -47,5 +47,6 @@ in
     compton
     parcellite
 #    i3blocks-hs-contrib
+    masterpdfeditor
     ];
 }
