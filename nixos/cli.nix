@@ -30,6 +30,7 @@ in
     nix-prefetch-git
     bat
     youtube-dl
+    appimage-run
   ];
 
   programs.bash.enableCompletion = true;
