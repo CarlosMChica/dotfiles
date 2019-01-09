@@ -118,7 +118,7 @@ updateDns() {
 }
 
 findFileByContent() {
-  sudo grep -rinl "$2" -e "$1"
+  find "$2" -iname "*$3*" -exec grep -Hn "$1" {} \;
 }
 
 findFileByName() {
