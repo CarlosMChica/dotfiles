@@ -17,7 +17,7 @@ in
     w3m
     ffmpegthumbnailer
     atool
-    neomutt
+#    neomutt
     taskwarrior
     tasksh
     xsel
