@@ -13,10 +13,11 @@ source "$relativePath/java.sh"
 source "$relativePath/haskell.sh"
 source "$relativePath/editors.sh"
 source "$relativePath/git-alias.sh"
-# source "/usr/local/bin/git-completion.bash"
+source "$relativePath/git-completion.bash"
 source "$relativePath/git-alias-custom.sh"
 source "$relativePath/ssl.sh"
 source "$relativePath/mango.sh"
 
-AUTOJUMP_PATH=$(readlink -f "$(which autojump)")
-. "${AUTOJUMP_PATH%bin/*}/etc/profile.d/autojump.sh"
+. /usr/share/autojump/autojump.sh
+#AUTOJUMP_PATH=$(readlink -f "$(which autojump)")
+#. "${AUTOJUMP_PATH%bin/*}/autojump.sh"
