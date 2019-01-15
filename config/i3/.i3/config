@@ -289,8 +289,8 @@ bar {
   tray_output none
   status_command i3blocks -c ~/dotfiles/config/i3blocks/bottom
   workspace_buttons no
-  height 40
-  font pango: xos4 Terminus, FontAwesome Regular 11
+  height 30
+  font pango: xos4 Terminus, FontAwesome Regular 10
   colors {
     separator #D8DEE9
     background #3B4252
@@ -306,10 +306,10 @@ bar {
 bar {
   position top
   workspace_buttons yes
-  height 50
+  height 40
   tray_output primary
   tray_padding 10
-  font pango: xos4 Terminus, FontAwesome Regular 12
+  font pango: xos4 Terminus, FontAwesome Regular 11
   colors {
     separator #D8DEE9
     background #3B4252
