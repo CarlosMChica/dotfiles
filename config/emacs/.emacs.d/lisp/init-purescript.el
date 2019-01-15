@@ -7,22 +7,23 @@
   :config
   (add-hook 'purescript-mode-hook
             (lambda ()
-              (flycheck-purescript-setup)
               (psc-ide-mode)
-
-              (turn-on-purescript-indentation)
-              (inferior-psci-mode)))
+              (company-mode)
+              (flycheck-mode)
+              (turn-on-purescript-indentation)))
   (add-hook 'purescript-mode-hook 'programming-mode))
 
-(use-package psc-ide
-  :diminish psc-ide-mode
-  :ensure t
-  :defer t
-  :config
-  (setq browse-url-browser-function 'eww-browse-url)
-  (customize-set-variable 'psc-ide-rebuild-on-save t))
-
-(use-package psci :ensure t :defer t)
-(use-package flycheck-purescript :ensure t :defer t)
+;(use-package psc-ide
+;  :diminish psc-ide-mode
+;  :ensure t
+;  :defer t
+;  :config
+;  (setq psc-ide-use-npm-bin t)
+;  (setq psc-ide-output-directory "build/")
+;  (setq browse-url-browser-function 'eww-browse-url)
+;  (customize-set-variable 'psc-ide-rebuild-on-save t))
+;
+;(use-package psci :ensure t :defer t)
+;(use-package flycheck-purescript :ensure t :defer t)
 
 (provide 'init-purescript)
