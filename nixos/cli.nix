@@ -24,8 +24,6 @@ in
     lm_sensors
     ag
     awscli
-#    powerline-hs
-    #python36Packages.powerline
     powerline-go
     nix-prefetch-git
     bat
@@ -33,5 +31,8 @@ in
     appimage-run
   ];
 
-  programs.bash.enableCompletion = true;
+  programs = {
+    bash.enableCompletion = true;
+    tmux.enable = true;
+  };
 }
