@@ -16,8 +16,10 @@ source "$relativePath/git-alias.sh"
 source "$relativePath/git-completion.bash"
 source "$relativePath/git-alias-custom.sh"
 source "$relativePath/ssl.sh"
-source "$relativePath/mango.sh"
 
-. /usr/share/autojump/autojump.sh
-#AUTOJUMP_PATH=$(readlink -f "$(which autojump)")
-#. "${AUTOJUMP_PATH%bin/*}/autojump.sh"
+if [ -e /usr/share/autojump/autojump.sh ]; then
+  source /usr/share/autojump/autojump.sh
+else
+  AUTOJUMP_PATH=$(readlink -f "$(which autojump)")
+  source "${AUTOJUMP_PATH%bin/*}/etc/profile.d/autojump.sh"
+fi
