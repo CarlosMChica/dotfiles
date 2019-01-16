@@ -3,6 +3,7 @@
 alias ghc='stack exec ghc --'
 alias ghci='stack exec ghci --'
 alias si='stack install'
+alias sbf='stack build --fast'
 
 hid () {
   ghcid --command "stack ghci --ghc-options='-O0' --ghci-options='-fobject-code -O0' $2 $1"
