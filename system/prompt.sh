@@ -3,10 +3,10 @@
 export PROMPT_DIRTRIM=2
 
 function _update_ps1() {
-  POWERLINE_GO=$(which powerline-go)
-  PS1="$($POWERLINE_GO  \
-         -error $? \
-         -modules "user,cwd,git,exit,jobs,perms,root,ssh,nix-shell")"
+  PS1="$(powerline-go \
+   -numeric-exit-codes \
+   -modules cwd,git,jobs,perms,ssh,nix-shell,exit,root \
+   -error $?)"
 }
 
 if [ "$TERM" != "linux" ]; then
