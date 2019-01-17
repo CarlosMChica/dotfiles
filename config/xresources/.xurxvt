@@ -28,8 +28,8 @@ URxvt.url-launcher: xdg-open
 URxvt.matcher.button: 1
 
 !! Clipboard
-URxvt.keysym.Shift-Control-V: eval:clipboard:paste
-URxvt.keysym.Shift-Control-C: eval:clipboard:copy
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 URxvt.keyboard-select.clipboard: true
 URxvt.clipboard.autocopy: true
 URxvt.iso14755: false
