@@ -6,6 +6,7 @@ URxvt.internalBorder: 0
 URxvt.font: xft:Terminus:size=13, xft:Symbola:size=13, xft:DroidSansMonoForPowerline Nerd Font:size=13, xft:Droid Sans Mono for Powerline:size=13
 URxvt.cursorColor: #D8DEE9
 URxvt*skipBuiltinGlyphs: true
+Urxvt*saveLines: 65535
 
 !! Scroll
 URxvt.scrollBar: false
@@ -16,7 +17,7 @@ URxvt*scrollWithBuffer: true
 URxvt*scrollTtyKeypress: true
 
 !! Extensions
-URxvt.perl-ext-common: default,matcher,font-size,url-select,keyboard-select,vtwheel,clipboard
+URxvt.perl-ext-common: default,matcher,font-size,url-select,keyboard-select,vtwheel,clipboard,selection-to-clipboard
 URxvt.colorUL: #5E81AC
 
 !! url-select
@@ -25,11 +26,10 @@ URxvt.url-select.launcher: xdg-open
 URxvt.url-select.underline: true
 URxvt.url-launcher: xdg-open
 URxvt.matcher.button: 1
-Urxvt*saveLines: 65535
 
 !! Clipboard
-URxvt.keysym.Shift-Control-V: perl:clipboard:paste
-URxvt.keysym.Shift-Control-C: perl:clipboard:copy
+URxvt.keysym.Shift-Control-V: eval:clipboard:paste
+URxvt.keysym.Shift-Control-C: eval:clipboard:copy
 URxvt.keyboard-select.clipboard: true
 URxvt.clipboard.autocopy: true
 URxvt.iso14755: false
