@@ -16,7 +16,9 @@
 
   (global-set-key (kbd "C-n") 'neotree-toggle)
   (define-key evil-normal-state-map (kbd "C-n") 'neotree-toggle)
-  (setq-default neo-show-hidden-files t))
+  (setq-default neo-show-hidden-files t)
+  (setq-default neo-auto-indent-point t)
+  (setq-default neo-window-fixed-size t))
 
 (defun neotree-modify-mode-menu (option)
   "Asks for a mode and execute associated Neotree command"
