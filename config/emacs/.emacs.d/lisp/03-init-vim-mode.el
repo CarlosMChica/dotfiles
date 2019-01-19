@@ -44,7 +44,6 @@
   (define-key evil-motion-state-map (kbd "[ b") 'evil-prev-buffer)
   (define-key evil-motion-state-map (kbd "] b") 'evil-next-buffer)
 
-  (global-set-key (kbd "C-l") 'evil-search-highlight-persist-remove-all)
 
   ;;; esc quits
   (defun minibuffer-keyboard-quit ()
@@ -116,10 +115,19 @@
   (define-key evil-normal-state-map (kbd "C-a") 'evil-numbers/inc-at-pt)
   (define-key evil-normal-state-map (kbd "C-x") 'evil-numbers/dec-at-pt))
 
-(use-package evil-collection
+(use-package
+  evil-collection
   :ensure t
   :defer t
   :config
   (evil-collection-init))
+
+(use-package
+  evil-search-highlight-persist
+  :ensure t
+  :config
+
+  (global-set-key (kbd "C-l") 'evil-search-highlight-persist-remove-all)
+  (global-evil-search-highlight-persist t))
 
 (provide '03-init-vim-mode)
