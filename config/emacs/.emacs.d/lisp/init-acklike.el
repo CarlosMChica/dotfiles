@@ -34,6 +34,11 @@
   (location-list-buffer (rx bos "*xah-find output*")))
 
 (use-package
+  ag
+  :ensure t
+  :defer t)
+
+(use-package
   helm-ag
   :ensure t
   :defer t)
