@@ -15,6 +15,7 @@
     (message "No region active; can't yank to clipboard!")))
 
 (define-key evil-motion-state-map (kbd "M-c") 'copy-to-x-clipboard)
+(global-set-key (kbd "C-S-V") 'yank)
 
 (use-package
   simpleclip
