@@ -16,4 +16,13 @@
 
 (define-key evil-motion-state-map (kbd "M-c") 'copy-to-x-clipboard)
 
+(use-package
+  simpleclip
+  :ensure t
+  :config
+  (simpleclip-mode 1)
+  (setq simpleclip-cut-keystrokes '("C-S-x"))
+  (setq simpleclip-copy-keystrokes '("C-S-c"))
+  (setq simpleclip-paste-keystrokes '("C-S-v")))
+
 (provide 'init-clipboard)
