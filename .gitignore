@@ -40,3 +40,6 @@ Temporary Items
 
 config/vpn/server.ovpn
 result
+
+#Emacs recentf
+recentf
