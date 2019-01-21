@@ -129,7 +129,8 @@
   :ensure t
   :config
 
-  (global-set-key (kbd "C-l") 'evil-search-highlight-persist-remove-all)
+  (evil-ex-define-cmd "noh" 'evil-search-highlight-persist-remove-all)
+  (set-face-background 'evil-search-highlight-persist-highlight-face "#88C0D0")
   (global-evil-search-highlight-persist t))
 
 (provide '03-init-vim-mode)
