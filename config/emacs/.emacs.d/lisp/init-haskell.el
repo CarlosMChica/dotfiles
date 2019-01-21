@@ -64,6 +64,12 @@
   (set-compile-for 'haskell-mode-hook "stack test")
   (set-company-backend-for 'haskell-mode-hook 'company-ghci)
 
+
+  (add-hook
+   'flycheck-mode-hook
+   (lambda () (progn
+           (add-to-list 'flycheck-disabled-checkers 'haskell-stack-ghc))))
+
 ;  (use-package
 ;    dante
 ;    :ensure t
