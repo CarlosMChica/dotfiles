@@ -21,7 +21,7 @@
         display-buffer-reuse-window)
        (window-height . 18)))
     (select-window (get-buffer-window ghcid-buf))
-    (make-term "ghcid" "/bin/bash")
+    (make-term "ghcid" (bash-path))
     (term-mode)
     (term-char-mode)
     (term-set-escape-char ?\C-x)
@@ -36,6 +36,9 @@
       (progn
         (set-process-query-on-exit-flag ghcid-proc nil)
         (kill-process ghcid-proc)))))
+
+(defun bash-path ()
+  (replace-regexp-in-string "\n$" "" (shell-command-to-string "which bash")))
 
 ;; TODO Pass in compilation command like compilation-mode
 (defun ghcid-command (h)
