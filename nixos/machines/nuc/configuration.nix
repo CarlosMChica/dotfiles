@@ -4,7 +4,7 @@
 	imports =
 		[
 			../../common.nix
-      ./hardware-configuration.nix
+      /etc/nixos/hardware-configuration.nix
 		];
 
   networking.hostName =  "nuc-nix";

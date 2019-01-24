@@ -4,7 +4,7 @@
 	imports =
 		[
 			../../common.nix
-      ./hardware-configuration.nix
+      /etc/nixos/hardware-configuration.nix
 		];
 
   networking.hostName =  "lenovox230-nix";
@@ -22,7 +22,7 @@
       {
         name = "root";
         # blkid gives you back the disk id
-        device = "/dev/disk/by-uuid/10c91e62-3bc3-468b-9be8-47dc29138712";
+        device = "/dev/disk/by-uuid/ab20dece-a988-4943-9327-28c1aca33e8c";
         preLVM = true;
         allowDiscards = true;
       }

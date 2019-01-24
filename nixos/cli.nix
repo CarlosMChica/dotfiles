@@ -29,6 +29,7 @@ in
     bat
     youtube-dl
     appimage-run
+    exfat
   ];
 
   programs = {
