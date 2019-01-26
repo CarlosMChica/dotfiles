@@ -129,7 +129,7 @@
   :ensure t
   :config
 
-  (evil-ex-define-cmd "noh" 'evil-search-highlight-persist-remove-all)
+  (evil-ex-define-cmd "noh" 'evil-ex-nohighlight)
   (set-face-attribute 'evil-search-highlight-persist-highlight-face nil
                       :inherit 'evil-ex-search
                       :background nil
