@@ -77,6 +77,7 @@
   (evil-ex-define-cmd "WQA" "xall")
   (evil-ex-define-cmd "W" "w")
   (evil-ex-define-cmd "Wa" 'evil-write-all)
+  (evil-ex-define-cmd "WA" 'evil-write-all)
   (evil-ex-define-cmd "Q" "q")
   (evil-ex-define-cmd "Qa" "qa")
   (evil-ex-define-cmd "E" "e")
