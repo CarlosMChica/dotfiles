@@ -130,11 +130,17 @@
   :ensure t
   :config
 
-  (evil-ex-define-cmd "noh" 'evil-ex-nohighlight)
+  (evil-ex-define-cmd "noh" 'clear-search-highlight)
   (set-face-attribute 'evil-search-highlight-persist-highlight-face nil
                       :inherit 'evil-ex-search
                       :background nil
                       :foreground nil)
   (global-evil-search-highlight-persist t))
+
+(defun clear-search-highlight ()
+  (interactive)
+  (progn
+    (evil-ex-nohighlight)
+    (evil-search-highlight-persist-remove-all)))
 
 (provide '03-init-vim-mode)
