@@ -45,12 +45,5 @@ dalias() { alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/[
 # Bash into running container
 dbash() { docker exec -it $(docker ps -aqf "name=$1") bash; }
 
-dockerCleanUpContainers() {
-  docker ps -aq | xargs docker stop
-  docker ps -aq | xargs docker rm
-}
-
-dockerPrune() {
-  docker system prune
-  docker rmi "$(docker images -a -q)"
-}
+# Remove all volumes
+dvrm() { docker volume rm $(docker volume ls -q); }
