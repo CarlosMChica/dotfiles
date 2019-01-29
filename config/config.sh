@@ -24,5 +24,7 @@ stow --target="$HOME" inputrc
 stow --target="$HOME" bash
 stow --target="$HOME" xinit
 stow --target="$HOME" gtk
+stow --target="$HOME" xmodmap
+stow --target="$HOME" psql
 sudo stow --target=/etc bluetooth
 sudo stow --target=/etc pulseaudio
