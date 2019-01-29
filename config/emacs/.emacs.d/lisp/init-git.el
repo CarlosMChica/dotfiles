@@ -3,6 +3,6 @@
   :ensure t
   :defer t
   :config
-  (evil-leader/set-key "gst" 'magit-status))
+  (evil-leader/set-key "g" 'magit-status))
 
 (provide 'init-git)
