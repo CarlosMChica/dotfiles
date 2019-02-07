@@ -1,6 +1,8 @@
 [user]
-  email = carlos.delachica@habito.com
+  email = carlosdelachica@gmail.com
   name = Carlos Morera de la Chica
+[includeIf "gitdir:~/repositories/habito/"]
+  path = ~/dotfiles/config/git/.gitconfig-habito
 [core]
   ignorecase = false
   fileMode = false
