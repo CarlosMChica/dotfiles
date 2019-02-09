@@ -11,12 +11,12 @@
     enableIPv6 = false;
   };
   services.openvpn.servers = {
-    coduranceVPN = {
-      config = '' config /home/carlos/Downloads/34.242.136.162-direct.ovpn '';
+    secondaryVPN = {
+      config = '' config /home/carlos/Downloads/secondary.ovpn '';
       autoStart = false;
     };
-    haskellVPN = {
-      config = '' config /home/carlos/Downloads/188.166.3.148-direct.ovpn '';
+    primaryVPN = {
+      config = '' config /home/carlos/Downloads/primary.ovpn '';
       autoStart = true;
     };
   };
