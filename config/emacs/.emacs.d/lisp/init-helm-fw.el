@@ -15,12 +15,15 @@
      (setq
        helm-quick-update t
        helm-bookmark-show-location t
-       helm-buffers-fuzzy-matching t)
+       helm-buffers-fuzzy-matching t
+       helm-recentf-fuzzy-matching t
+       helm-M-x-fuzzy-match t)
 
      (location-list-buffer (rx bos "*helm M-x"))
      (location-list-buffer (rx bos "*helm mini"))
      (location-list-buffer (rx bos "*helm-ag"))
      (location-list-buffer (rx bos "*helm-mode-completion-at-point*"))
+     (location-list-buffer (rx bos "*helm-describe"))
      ;; Override default command launcher
      (global-set-key (kbd "M-x") 'helm-M-x))
 
