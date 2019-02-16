@@ -1,8 +1,5 @@
 { config, pkgs, ... }:
 
-let
-  powerline-hs = pkgs.haskellPackages.callPackage ./pkgs/powerline-hs { };
-in
 {
   environment.systemPackages = with pkgs; [
     shellcheck
