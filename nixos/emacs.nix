@@ -3,6 +3,6 @@
 {
   environment.systemPackages = with pkgs; [
     emacs
-    zeal
+    sqlite # Required by helm-dash
   ];
 }
