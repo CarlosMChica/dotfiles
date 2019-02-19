@@ -37,7 +37,7 @@
   :defer t
   :config
   (custom-set-variables
-   '(helm-ag-command-option "--hidden --width 120")
+   '(helm-ag-command-option "--hidden --width 120 --ignore bower_components/ --ignore node_modules/ --ignore build/ --ignore output/ --ignore bin/ --ignore dist/ --ignore .stack-work/ --ignore .git/")
    '(helm-ag-use-grep-ignore-list t)
    '(helm-ag-insert-at-point 'word)
    '(helm-ag-use-agignore t)))
