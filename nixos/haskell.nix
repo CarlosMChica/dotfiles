@@ -10,6 +10,8 @@
     haskellPackages.hlint
     haskellPackages.hoogle
     haskellPackages.cabal2nix
+
+    purescript
   ];
 
 }
