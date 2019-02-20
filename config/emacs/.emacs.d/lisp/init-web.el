@@ -13,9 +13,11 @@
   :mode "\\.scss\\'"
   :mode "\\.css\\'"
   :ensure t
-  :defer t)
-
-(setq web-mode-markup-indent-offset 2)
-(setq web-mode-css-indent-offset 2)
+  :defer t
+  :config
+  (setq
+    web-mode-markup-indent-offset 2
+    web-mode-css-indent-offset 2)
+  (add-hook 'web-mode-hook 'programming-mode))
 
 (provide 'init-web)
