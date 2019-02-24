@@ -35,6 +35,7 @@
       (company-mode +1)
       (origami-mode +1)
       (initialize-project-tags)
+      (electric-pair-mode +1)
       (highlight-indent-guides-mode +1))
     (progn
       (prettify-symbols-mode -1)
@@ -47,6 +48,7 @@
       (xref-etags-mode -1)
       (company-mode -1)
       (origami-mode -1)
+      (electric-pair-mode -1)
       (highlight-indent-guides-mode -1))))
 
 (defun set-compile-for (mode command)

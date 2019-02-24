@@ -27,6 +27,7 @@
     youtube-dl
     appimage-run
     exfat
+    bazel
   ];
 
   programs = {
