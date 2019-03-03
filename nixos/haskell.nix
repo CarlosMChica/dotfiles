@@ -1,5 +1,9 @@
 { config, pkgs, ... }:
 
+let
+  purs = pkgs.callPackage ./pkgs/purs { };
+in
+
 {
   environment.systemPackages = with pkgs; [
     haskell.compiler.ghc862
@@ -11,6 +15,7 @@
     haskellPackages.hoogle
     haskellPackages.cabal2nix
 
+    purs
   ];
 
 }
