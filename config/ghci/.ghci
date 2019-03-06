@@ -1,3 +1,17 @@
 :set prompt "\ESC[0;37m%s\n\ESC[1;91mλ \ESC[m"
+
+:seti -XOverloadedStrings
+:seti -XScopedTypeVariables
+
 :set -Wall
+:set -fno-warn-type-defaults
+
+:set +s
+:set +t
+
+-- :set -package pretty-simple
+
+-- import Text.Pretty.Simple (pPrint)
+
+-- :set -interactive-print pPrint
 
