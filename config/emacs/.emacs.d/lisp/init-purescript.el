@@ -3,30 +3,29 @@
   :diminish purescript-indentation-mode
   :mode "\\.purs\\'"
   :ensure t
-  :defer t
   :config
   (setq projectile-tags-command "npm run etags")
-  (add-hook 'purescript-mode-hook
-            (lambda ()
-              (psc-ide-mode)
-              (company-mode)
-              (flycheck-mode)
-              (turn-on-purescript-indentation)))
-  (add-hook 'purescript-mode-hook 'programming-mode))
+  (add-hook 'purescript-mode-hook 'turn-on-purescript-decl-scan)
 
-(define-key evil-normal-state-map (kbd "M-.")
-  `(menu-item "" evil-repeat-pop :filter
-              ,(lambda (cmd) (if (eq last-command 'evil-repeat-pop) cmd))))
+  ; Cant navigate to etags if the prefix is a namespace
+  (add-hook 'purescript-mode-hook (lambda ()
+    (make-variable-buffer-local 'find-tag-default-function)
+    (setq find-tag-default-function (lambda () (current-word t t)))
+  ))
 
-(use-package psc-ide
-  :diminish psc-ide-mode
-  :ensure t
-  :defer t
-  :config
-  (setq psc-ide-use-npm-bin t)
-;  (setq psc-ide-output-directory "build/")
-  (setq browse-url-browser-function 'eww-browse-url)
-  (customize-set-variable 'psc-ide-rebuild-on-save t))
+  (add-hook 'purescript-mode-hook 'turn-on-purescript-indentation)
+  (add-hook 'purescript-mode-hook 'programming-mode)
+  (add-hook 'purescript-mode-hook 'inferior-psci-mode)
+
+  (setq purescript-align-imports-pad-after-name nil)
+  (defun purescript-sort-and-align-imports ()
+    (interactive)
+    (save-excursion
+      (while (purescript-navigate-imports)
+        (progn
+          (purescript-sort-imports)
+          (purescript-align-imports)))
+      (purescript-navigate-imports-return))))
 
 (use-package psci :ensure t :defer t)
 (use-package flycheck-purescript :ensure t :defer t)
