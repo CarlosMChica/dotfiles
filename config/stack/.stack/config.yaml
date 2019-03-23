@@ -1,4 +1,4 @@
- This file contains default non-project-specific settings for 'stack', used
+# This file contains default non-project-specific settings for 'stack', used
 # in all projects.  For more information about stack's configuration, see
 # http://docs.haskellstack.org/en/stable/yaml_configuration/
 
@@ -8,7 +8,9 @@
 # See https://docs.haskellstack.org/en/stable/yaml_configuration/#templates
 templates:
   params:
-#    author-name:
-#    author-email:
-#    copyright:
-#    github-username:
+    author-name: Carlos Morera de la Chica
+    author-email: carlosdelachica@gmail.com
+    github-username: CarlosMChica
+nix:
+  enable: true
+  pure: false
