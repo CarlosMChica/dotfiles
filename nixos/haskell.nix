@@ -6,7 +6,7 @@ in
 
 {
   environment.systemPackages = with pkgs; [
-    haskell.compiler.ghc862
+    haskell.compiler.ghc864
     stack
     haskellPackages.cabal-install
     haskellPackages.hindent
