@@ -6,6 +6,7 @@ source "$relativePath/bluetooth.sh"
 source "$relativePath/sound.sh"
 source "$relativePath/screen.sh"
 source "$relativePath/acestream.sh"
+source "$relativePath/tmux.sh"
 
 if [[ $(uname) == "Darwin" ]]; then
   alias ls='ls -G'
