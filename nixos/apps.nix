@@ -10,5 +10,6 @@
     libreoffice
     transmission_gtk
     vlc
+    baobab
   ];
 }
