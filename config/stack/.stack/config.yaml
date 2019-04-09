@@ -14,3 +14,4 @@ templates:
 nix:
   enable: true
   pure: false
+allow-newer: true
