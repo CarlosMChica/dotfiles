@@ -19,6 +19,19 @@
 
   (define-key evil-motion-state-map (kbd "C-z") 'suspend-emacs)
 
+  ;; Disable arrows
+  (defun disable-arrow-key (arrow)
+    (defun use-vim-keys()
+      (interactive)
+      (message (format "Use Vim motion keys")))
+    (define-key evil-insert-state-map (kbd arrow) 'use-vim-keys)
+    (define-key evil-motion-state-map (kbd arrow) 'use-vim-keys))
+
+  (disable-arrow-key "<up>")
+  (disable-arrow-key "<left>")
+  (disable-arrow-key "<right>")
+  (disable-arrow-key "<down>")
+
   ;; Visual line navigation
   (define-key evil-motion-state-map (kbd "gj") 'evil-next-visual-line)
   (define-key evil-motion-state-map (kbd "g <down>") 'evil-next-visual-line)
@@ -44,7 +57,6 @@
   (define-key evil-motion-state-map (kbd "[ b") 'evil-prev-buffer)
   (define-key evil-motion-state-map (kbd "] b") 'evil-next-buffer)
 
-
   ;;; esc quits
   (defun minibuffer-keyboard-quit ()
     "Abort recursive edit.
@@ -62,13 +74,13 @@
   (define-key minibuffer-local-completion-map [escape] 'minibuffer-keyboard-quit)
   (define-key minibuffer-local-must-match-map [escape] 'minibuffer-keyboard-quit)
   (define-key minibuffer-local-isearch-map [escape] 'minibuffer-keyboard-quit)
-  (define-key isearch-mode-map (kbd "<down>") 'isearch-ring-advance)
-  (define-key isearch-mode-map (kbd "<up>") 'isearch-ring-retreat)
 
   ;; Reload config
   (evil-ex-define-cmd
    "ReloadConfig"
    '(lambda () (interactive) (load-file (concat emacs-dir "init.el"))))
+
+  (define-key evil-normal-state-map (kbd "C-g") 'evil-show-file-info)
 
   ;; Typo avoider
   (evil-ex-define-cmd "WQ" "wq")
@@ -127,6 +139,7 @@
   :config
   (evil-collection-init))
 
+;; search
 (use-package
   evil-search-highlight-persist
   :ensure t
@@ -145,5 +158,8 @@
   (progn
     (evil-ex-nohighlight)
     (evil-search-highlight-persist-remove-all)))
+
+(define-key isearch-mode-map (kbd "<down>") 'isearch-ring-advance)
+(define-key isearch-mode-map (kbd "<up>") 'isearch-ring-retreat)
 
 (provide '03-init-vim-mode)
