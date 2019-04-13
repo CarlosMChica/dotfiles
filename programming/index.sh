@@ -16,7 +16,6 @@ source "$relativePath/git-alias.sh"
 source "$relativePath/git-completion.bash"
 source "$relativePath/git-alias-custom.sh"
 source "$relativePath/ssl.sh"
-source "$relativePath/tmux.sh"
 
 if [ -e /usr/share/autojump/autojump.sh ]; then
   source /usr/share/autojump/autojump.sh
