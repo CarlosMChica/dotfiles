@@ -62,6 +62,8 @@
   (define-key minibuffer-local-completion-map [escape] 'minibuffer-keyboard-quit)
   (define-key minibuffer-local-must-match-map [escape] 'minibuffer-keyboard-quit)
   (define-key minibuffer-local-isearch-map [escape] 'minibuffer-keyboard-quit)
+  (define-key isearch-mode-map (kbd "<down>") 'isearch-ring-advance)
+  (define-key isearch-mode-map (kbd "<up>") 'isearch-ring-retreat)
 
   ;; Reload config
   (evil-ex-define-cmd
@@ -130,6 +132,7 @@
   :ensure t
   :config
 
+  (define-key evil-normal-state-map (kbd "C-S-L") 'clear-search-highlight)
   (evil-ex-define-cmd "noh" 'clear-search-highlight)
   (set-face-attribute 'evil-search-highlight-persist-highlight-face nil
                       :inherit 'evil-ex-search
