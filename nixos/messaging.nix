@@ -4,6 +4,7 @@
   environment.systemPackages = with pkgs; [
     rambox
     franz
+    slack
   ];
 
 }
