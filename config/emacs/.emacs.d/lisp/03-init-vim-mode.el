@@ -19,24 +19,38 @@
 
   (define-key evil-motion-state-map (kbd "C-z") 'suspend-emacs)
 
-  ;; Disable arrows
-  (defun disable-arrow-key (arrow)
-    (defun use-vim-keys()
-      (interactive)
-      (message (format "Use Vim motion keys")))
-    (define-key evil-insert-state-map (kbd arrow) 'use-vim-keys)
-    (define-key evil-motion-state-map (kbd arrow) 'use-vim-keys))
+  ;; Enable arrows
+  (defun enable-arrow-keys ()
+    (interactive)
+    (defun use-arrow-key (arrow action)
+      (define-key evil-insert-state-map (kbd arrow) action)
+      (define-key evil-motion-state-map (kbd arrow) action))
+    (use-arrow-key "<up>" 'evil-previous-visual-line)
+    (use-arrow-key "<left>" 'evil-backward-char)
+    (use-arrow-key "<right>" 'evil-forward-char)
+    (use-arrow-key "<down>" 'evil-next-visual-line)
+    (message (format "Arrow keys enabled")))
 
-  (disable-arrow-key "<up>")
-  (disable-arrow-key "<left>")
-  (disable-arrow-key "<right>")
-  (disable-arrow-key "<down>")
+  ;; Disable arrows
+  (defun disable-arrow-keys ()
+    (interactive)
+    (defun disable-arrow-key (arrow)
+      (defun use-vim-keys()
+        (interactive)
+        (message (format "Use Vim motion keys")))
+      (define-key evil-insert-state-map (kbd arrow) 'use-vim-keys)
+      (define-key evil-motion-state-map (kbd arrow) 'use-vim-keys))
+    (disable-arrow-key "<up>")
+    (disable-arrow-key "<left>")
+    (disable-arrow-key "<right>")
+    (disable-arrow-key "<down>")
+    (message (format "Arrow keys disabled")))
+
+  (disable-arrow-keys)
 
   ;; Visual line navigation
-  (define-key evil-motion-state-map (kbd "gj") 'evil-next-visual-line)
-  (define-key evil-motion-state-map (kbd "g <down>") 'evil-next-visual-line)
-  (define-key evil-motion-state-map (kbd "gk") 'evil-previous-visual-line)
-  (define-key evil-motion-state-map (kbd "g <up>") 'evil-previous-visual-line)
+  (define-key evil-motion-state-map (kbd "j") 'evil-next-visual-line)
+  (define-key evil-motion-state-map (kbd "k") 'evil-previous-visual-line)
 
   ;; Window navigation
   (define-key evil-motion-state-map (kbd "C-w <up>") 'evil-window-up)
