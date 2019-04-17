@@ -32,7 +32,7 @@ smart_gaps on
 gaps inner 10
 
 # Apps assigned to workspaces
-assign [instance="whatsapp-desktop|yakyak|rambox"] $WS5
+assign [instance="whatsapp-desktop|yakyak|rambox|slack"] $WS5
 assign [class="Google-chrome"] $WS2
 assign [class="chromium"] $WS2
 assign [class="jetbrains(?)"] $WS3
