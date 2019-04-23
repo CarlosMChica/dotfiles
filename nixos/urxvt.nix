@@ -2,7 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    rxvt_unicode-with-plugins
+    rxvt_unicode
   ];
 
   systemd.user.services.urxvtd = {
