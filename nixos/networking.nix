@@ -4,17 +4,11 @@
 
   networking = {
     networkmanager.enable = true;
-    nameservers = ["208.67.222.222" "208.67.220.220"];
+    nameservers = ["103.86.96.100" "103.86.99.100"];
     firewall.enable = false;
-# check if the following line helps accesing sport365 from home
-#    networking.dnsExtensionMechanism
     enableIPv6 = false;
   };
   services.openvpn.servers = {
-    secondaryVPN = {
-      config = '' config /home/carlos/Downloads/secondary.ovpn '';
-      autoStart = false;
-    };
     primaryVPN = {
       config = '' config /home/carlos/Downloads/primary.ovpn '';
       autoStart = true;
