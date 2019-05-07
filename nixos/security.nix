@@ -5,6 +5,7 @@
     keepass
     keepass-keepasshttp
     keepassxc
+    gksu
   ];
 
   services.physlock.enable = true;
