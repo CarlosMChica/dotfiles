@@ -5,6 +5,7 @@ alias gcam='git add . && git commit -a -m'
 alias gprune='git branch | grep -v master | xargs git branch -D'
 alias gbsup='git branch --set-upstream-to=origin/$(git_current_branch)'
 alias gpf='git push --force-with-lease'
+alias gds='git diff --staged'
 
 gblame() {
   git log -p -M --follow --stat -- "$1"
