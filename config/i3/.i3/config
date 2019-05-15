@@ -51,7 +51,7 @@ for_window [title="^Nyanyanyanyanyanyanya...$"] mark "STATWIN", fullscreen enabl
 set $mod Mod4
 
 # fonts
-font pango:Roboto 10, FontAwesome Regular 10
+font pango:Pragmata Pro Mono 10
 
 # Move windows with mouse+$mod
 floating_modifier $mod
@@ -60,7 +60,7 @@ floating_modifier $mod
 bindsym $mod+Return exec $TERMINAL
 bindsym $mod+Shift+q kill
 bindsym $mod+Shift+Alt+q exec --no-startup-id kill $(xprop -id `xdotool getwindowfocus` | grep '_NET_WM_PID' | grep -oE '[[:digit:]]*$')
-bindsym $mod+d exec --no-startup-id dmenu_run -i -fn 'xos4 Terminus-13'
+bindsym $mod+d exec --no-startup-id dmenu_run -i -fn 'Pragmata Pro Mono-13'
 bindsym --release Control+Shift+Print exec --no-startup-id scrot -s
 bindsym Shift+Print exec --no-startup-id scrot
 
@@ -290,7 +290,7 @@ bar {
   status_command i3blocks -c ~/dotfiles/config/i3blocks/bottom
   workspace_buttons no
   height 30
-  font pango: xos4 Terminus, FontAwesome Regular 10
+  font pango: Pragmata Pro 10
   colors {
     separator #D8DEE9
     background #3B4252
@@ -309,7 +309,7 @@ bar {
   height 40
   tray_output primary
   tray_padding 10
-  font pango: xos4 Terminus, FontAwesome Regular 11
+  font pango: Pragmata Pro 11
   colors {
     separator #D8DEE9
     background #3B4252
