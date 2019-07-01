@@ -6,8 +6,8 @@ in
 
 {
   environment.systemPackages = with pkgs; [
-    haskell.compiler.ghc864
-    stack
+    haskellPackages.ghc
+    haskellPackages.stack
     haskellPackages.cabal-install
     haskellPackages.hindent
     haskellPackages.stylish-haskell
