@@ -32,6 +32,7 @@ alias ovpnPrimaryDown='systemctl stop openvpn-primaryVPN.service'
 alias mountWindows='sudo mount /dev/sda4 /windows'
 alias emptyTrash='rm -rf ~/.local/share/Trash/*'
 alias restartX='systemctl restart display-manager.service'
+alias reconnectNordvpn='nordvpn -o ~/Downloads/primary.ovpn -c ~/credentials.txt'
 
 autogeneratePassword () {
   LC_CTYPE=C tr -dc "[:alnum:]" < /dev/urandom | fold "-w${1:-32}" | head -1
