@@ -58,6 +58,11 @@ min_width= 16G
 
 [separator]
 
+[Wifi]
+interval=10
+
+[separator]
+
 [Bandwidth]
 min_width= 999.9MBs  999.9MBs
 interval=3
@@ -70,7 +75,13 @@ interval=30
 [separator]
 
 [OpenVpn]
+command=$HOME/.local/bin/OpenVpn -c "NordVpn -o ~/Downloads/primary.ovpn -c ~/credentials.txt"
 interval=2
+
+[separator]
+
+[Battery]
+interval=30
 
 [separator]
 
