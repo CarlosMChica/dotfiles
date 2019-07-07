@@ -75,7 +75,7 @@ interval=30
 [separator]
 
 [OpenVpn]
-command=$HOME/.local/bin/OpenVpn -c "NordVpn -o ~/Downloads/primary.ovpn -c ~/credentials.txt"
+command=$HOME/.local/bin/OpenVpn -c "nordvpn -o ~/Downloads/primary.ovpn -c ~/credentials.txt -g"
 interval=2
 
 [separator]
