@@ -1,0 +1,28 @@
+#!/usr/bin/env stack
+--stack script --resolver lts-13.27 --no-nix-pure --package turtle
+{-# LANGUAGE OverloadedStrings #-}
+
+import Turtle
+
+type VpnConfigPath = Text
+type CredentialsPath = Text
+type Gui = Bool
+
+optionsParser :: Parser (VpnConfigPath, CredentialsPath, Gui)
+optionsParser = (,,) <$> optText "ovpnConfigPath"     'o' "Where to download Openvpn config path"
+                     <*> optText "vpnCredentialsPath" 'c' "Path to VPN credentials username & password"
+                     <*> switch  "gui"                'g' "Whether to ask for sudo using GUI"
+
+main :: IO ()
+main = do
+  (vpnConfigPath, credentialsPath, gui) <- options "Script that auto-reconnects to the fastest nordvpn available server" optionsParser
+  sh $ do
+    servername <- inshell "curl --silent https://api.nordvpn.com/v1/servers/recommendations | jq '. | first.hostname'" empty
+    let configUrl = "https://downloads.nordcdn.com/configs/files/ovpn_tcp/servers/" <> lineToText servername <> ".tcp.ovpn --output " <> vpnConfigPath
+    success <- shell ("curl --silent " <> configUrl) empty
+    case success of
+      ExitFailure _ -> pure ()
+      ExitSuccess   -> do
+        inplace ("auth-user-pass" *> (pure $ "auth-user-pass " <> credentialsPath)) $ fromText vpnConfigPath
+        let sudo = if gui then "gksudo" else "sudo"
+        void $ shell (sudo <> " " <> "systemctl restart openvpn-primaryVPN.service") empty
