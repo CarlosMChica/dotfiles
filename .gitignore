@@ -46,3 +46,5 @@ recentf
 projectile-bookmarks.eld
 projectile.cache
 network-security.data
+.cache/
+transient/
