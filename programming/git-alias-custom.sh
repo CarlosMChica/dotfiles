@@ -1,6 +1,6 @@
 alias gpr='git pull-request'
 alias gdl='git discard'
-alias glrb='git pull --rebase'
+alias glrb='git pull --rebase --autostash'
 alias gcam='git add . && git commit -a -m'
 alias gprune='git branch | grep -v master | xargs git branch -D'
 alias gbsup='git branch --set-upstream-to=origin/$(git_current_branch)'

@@ -201,7 +201,7 @@ alias gpv='git push -v'
 
 alias gr='git remote'
 alias gra='git remote add'
-alias grb='git rebase'
+alias grb='git rebase --autostash'
 alias grba='git rebase --abort'
 alias grbc='git rebase --continue'
 alias grbi='git rebase -i'
