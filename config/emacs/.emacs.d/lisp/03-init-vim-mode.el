@@ -61,11 +61,18 @@
   (define-key evil-motion-state-map (kbd "C-w j") 'evil-window-down)
   (define-key evil-motion-state-map (kbd "C-w h") 'evil-window-left)
   (define-key evil-motion-state-map (kbd "C-w l") 'evil-window-right)
-
   (define-key evil-motion-state-map (kbd "C-k") 'evil-window-up)
   (define-key evil-motion-state-map (kbd "C-j") 'evil-window-down)
   (define-key evil-motion-state-map (kbd "C-h") 'evil-window-left)
   (define-key evil-motion-state-map (kbd "C-l") 'evil-window-right)
+
+  ;;Maximise window
+  (define-key evil-motion-state-map (kbd "C-w f") 'maximize-window)
+  (define-key evil-motion-state-map (kbd "C-f") 'maximize-window)
+
+  ;; Scroll
+  (define-key evil-motion-state-map (kbd "C-u") 'evil-scroll-up)
+  (define-key evil-motion-state-map (kbd "C-d") 'evil-scroll-down)
 
   ;; Buffer navigation
   (define-key evil-motion-state-map (kbd "[ b") 'evil-prev-buffer)
