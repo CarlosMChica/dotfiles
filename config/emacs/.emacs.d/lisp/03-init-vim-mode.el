@@ -70,10 +70,6 @@
   (define-key evil-motion-state-map (kbd "C-w f") 'maximize-window)
   (define-key evil-motion-state-map (kbd "C-f") 'maximize-window)
 
-  ;; Scroll
-  (define-key evil-motion-state-map (kbd "C-u") 'evil-scroll-up)
-  (define-key evil-motion-state-map (kbd "C-d") 'evil-scroll-down)
-
   ;; Buffer navigation
   (define-key evil-motion-state-map (kbd "[ b") 'evil-prev-buffer)
   (define-key evil-motion-state-map (kbd "] b") 'evil-next-buffer)
@@ -101,6 +97,10 @@
    "ReloadConfig"
    '(lambda () (interactive) (load-file (concat emacs-dir "init.el"))))
 
+  ;; More vim like
+  (customize-set-variable 'evil-want-Y-yank-to-eol t)
+  (customize-set-variable 'evil-want-C-d-scroll t)
+  (customize-set-variable 'evil-want-C-u-scroll t)
   (define-key evil-normal-state-map (kbd "C-g") 'evil-show-file-info)
 
   ;; Typo avoider
