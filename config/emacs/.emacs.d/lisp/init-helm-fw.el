@@ -26,5 +26,6 @@
      (location-list-buffer (rx bos "*helm-describe"))
      ;; Override default command launcher
      (global-set-key (kbd "M-x") 'helm-M-x))
+     (evil-leader/set-key "r" 'helm-resume)
 
 (provide 'init-helm-fw)
