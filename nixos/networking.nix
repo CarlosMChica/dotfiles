@@ -11,7 +11,7 @@
   services.openvpn.servers = {
     primaryVPN = {
       config = '' config /home/carlos/Downloads/primary.ovpn '';
-      autoStart = true;
+      autoStart = false;
     };
   };
 

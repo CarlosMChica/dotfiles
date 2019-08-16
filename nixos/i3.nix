@@ -30,7 +30,7 @@ in
     xorg.xwininfo
     acpi
 
-    dmenu2
+    dmenu
 
     dunst
 
