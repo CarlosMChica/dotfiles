@@ -17,7 +17,7 @@ fi
 alias cat='bat'
 alias ll='exa'
 alias la='ll'
-alias exa='exa -bghlaU --git --group-directories-first'
+alias exa='exa -bghla --git --group-directories-first'
 alias grep="grep --color=auto"
 alias dotfiles='(cd "$DOTFILES_LOCATION" && emacs -nw)'
 alias ffs='sudo $(fc -ln -1)'
