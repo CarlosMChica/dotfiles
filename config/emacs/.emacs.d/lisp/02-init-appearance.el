@@ -37,7 +37,6 @@
     (global-set-key (kbd "C-+") 'text-scale-increase)
     (global-set-key (kbd "C--") 'text-scale-decrease)))
 
-;; Personalization
-(set-default-font my-font)
+;(set-default-font my-font)
 
 (provide '02-init-appearance)
