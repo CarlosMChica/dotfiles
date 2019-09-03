@@ -18,6 +18,6 @@
 (define-key evil-normal-state-map (kbd "M-,") 'xref-pop-marker-stack)
 
 (location-list-buffer (rx bos "*helm-xref*"))
-(location-list-buffer (rx bos "*helm-mode-xref*"))
+(location-list-buffer (rx bos "*helm-mode-xref-find-references*"))
 (location-list-buffer (rx bos "*xref*"))
 (provide 'init-tags)
