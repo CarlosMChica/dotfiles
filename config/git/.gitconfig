@@ -6,6 +6,7 @@
 [core]
   ignorecase = false
   fileMode = false
+  excludesfile = ~/.gitignore.global
 [push]
   default = current
 [pager]
