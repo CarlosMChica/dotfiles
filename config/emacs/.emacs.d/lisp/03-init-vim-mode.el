@@ -1,5 +1,6 @@
 (use-package evil
   :ensure t
+  :init (setq evil-want-keybinding nil)
   :config
   (evil-mode 1)
 
@@ -125,6 +126,7 @@
 
 (use-package
   evil-easymotion
+  :after evil
   :ensure t
   :config
   (evilem-default-keybindings "SPC")
@@ -136,12 +138,14 @@
 
 (use-package
   evil-surround
+  :after evil
   :ensure t
   :config
   (global-evil-surround-mode))
 
 (use-package
   evil-leader
+  :after evil
   :ensure t
   :config
   (global-evil-leader-mode)
@@ -150,6 +154,7 @@
 
 (use-package
   evil-numbers
+  :after evil
   :ensure t
   :config
 
@@ -158,8 +163,8 @@
 
 (use-package
   evil-collection
+  :after evil
   :ensure t
-  :defer t
   :config
   (evil-collection-init))
 
