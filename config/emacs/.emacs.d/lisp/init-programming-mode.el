@@ -21,7 +21,7 @@
 
   (setq show-paren-delay 0)
 
-  (if (not (version< emacs-version "26")) (set-fill-column 80))
+  (if (not (version< emacs-version "26")) (set-fill-column 120))
 
   (if programming-mode
     (progn
