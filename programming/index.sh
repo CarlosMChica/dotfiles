@@ -23,3 +23,7 @@ else
   AUTOJUMP_PATH=$(readlink -f "$(which autojump)")
   source "${AUTOJUMP_PATH%bin/*}/etc/profile.d/autojump.sh"
 fi
+
+if [[ -r "$HOME/.local/bin/mcfly.bash" ]]; then
+  source "$HOME/.local/bin/mcfly.bash"
+fi
