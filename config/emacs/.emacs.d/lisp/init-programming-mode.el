@@ -20,6 +20,7 @@
   (evil-leader/set-key "r" 'recompile)
 
   (setq show-paren-delay 0)
+  (setq display-line-numbers-type 'relative)
 
   (if (not (version< emacs-version "26")) (set-fill-column 120))
 
