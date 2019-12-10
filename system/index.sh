@@ -34,6 +34,17 @@ alias emptyTrash='rm -rf ~/.local/share/Trash/*'
 alias restartX='systemctl restart display-manager.service'
 alias reconnectNordvpn='nordvpn -o ~/Downloads/primary.ovpn -c ~/credentials.txt'
 
+yankClip () {
+  YANK_CMD_PATH=$(which yank)
+  YANK_CLI_CMD_PATH=$(which yank-cli)
+  if [ -z "$YANK_CMD_PATH" ]; then
+    CMD="$YANK_CLI_CMD_PATH"
+  else
+    CMD="$YANK_CMD_PATH"
+  fi
+  $CMD -- xsel -b $@
+}
+
 autogeneratePassword () {
   LC_CTYPE=C tr -dc "[:alnum:]" < /dev/urandom | fold "-w${1:-32}" | head -1
 }
