@@ -28,6 +28,7 @@
     appimage-run
     exfat
     bazel
+    yank
   ];
 
   programs = {
