@@ -9,7 +9,6 @@ in
       disableWhileTyping = true; # doesn't work
       enable = true;
     };
-    displayManager.slim.enable = true;
     windowManager.i3 = {
       package = pkgs.i3-gaps;
       enable = true;
