@@ -14,21 +14,17 @@
     w3m
     ffmpegthumbnailer
     atool
-#    neomutt
     taskwarrior
     tasksh
     xsel
     lm_sensors
     ag
-    awscli
     powerline-go
     nix-prefetch-git
     bat
     youtube-dl
-    appimage-run
     exfat
-    bazel
-    yank
+    tldr
   ];
 
   programs = {
