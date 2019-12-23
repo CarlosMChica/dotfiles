@@ -203,7 +203,8 @@
   (dolist (alias pragmatapro-prettify-symbols-alist)
     (push alias prettify-symbols-alist)))
 
-(add-hook 'prog-mode-hook
-          #'add-pragmatapro-prettify-symbols-alist)
+(when (display-graphic-p)
+  (add-hook 'prog-mode-hook #'add-pragmatapro-prettify-symbols-alist))
+
 
 (global-prettify-symbols-mode +1)
