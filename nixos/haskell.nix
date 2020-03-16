@@ -9,8 +9,8 @@ in
     haskellPackages.ghc
     haskellPackages.stack
     haskellPackages.cabal-install
-    haskellPackages.hindent
-    haskellPackages.stylish-haskell
+    # haskellPackages.hindent
+    # haskellPackages.stylish-haskell
     haskellPackages.hlint
     haskellPackages.hoogle
     haskellPackages.cabal2nix
