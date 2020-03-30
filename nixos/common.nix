@@ -1,10 +1,5 @@
 { config, pkgs, ... }:
 
-let
-  n = pkgs.callPackage ./pkgs/npackagemanager { };
-  variety = pkgs.callPackage ./pkgs/variety { };
-  acestreamengine = pkgs.callPackage ./pkgs/acestreamengine { };
-in
 {
 
   nix.nixPath = ["/home/carlos/.nix-defexpr/channels:nixpkgs=/home/carlos/.nixpkgs-unstable-custom/nixpkgs:nixos-config=/etc/nixos/configuration.nix:/nix/var/nix/profiles/per-user/root/channels:stable=/nix/var/nix/profiles/per-user/root/channels/stable/nixpkgs"];
@@ -49,29 +44,14 @@ in
   # $ nix search
 
   environment.systemPackages = with pkgs; [
-    wget vim htop imagemagick gnumake binutils # variety acestreamengine n
+    wget vim htop imagemagick gnumake binutils
   ];
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = { enable = true; enableSSHSupport = true; };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Enable CUPS to print documents.
-  # services.printing.enable = true;
-
-  # services.xserver.xkbOptions = "eurosign:e";
   services.xserver = {
     enable = true;
     layout = "us";
   };
-  # Enable touchpad support.
-  # services.xserver.libinput.enable = true;
+
   security.sudo.configFile = "%wheel ALL=(ALL) ALL";
 
   nixpkgs.config = {
@@ -82,6 +62,7 @@ in
       };
     };
   };
+  nixpkgs.overlays = import ./overlays/default.nix;
 
   # This value determines the NixOS release with which your system is to be
   # compatible, in order to avoid breaking some software such as database
