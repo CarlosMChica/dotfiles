@@ -1,11 +1,11 @@
 { config, pkgs, ... }:
 
 {
-	imports =
-		[
-			../../common.nix
+  imports =
+    [
+      ../../common.nix
       /etc/nixos/hardware-configuration.nix
-		];
+    ];
 
   networking.hostName =  "nuc-nix";
 
@@ -42,9 +42,7 @@
     }
     {
       output = "HDMI2";
-      monitorConfig = ''
-        Option "Rotate" "left"
-      '';
+      monitorConfig = "Option \"Rotate\" \"left\"";
     }
   ];
 

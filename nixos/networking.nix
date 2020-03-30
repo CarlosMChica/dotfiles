@@ -8,12 +8,6 @@
     firewall.enable = false;
     enableIPv6 = false;
   };
-  services.openvpn.servers = {
-    primaryVPN = {
-      config = '' config /home/carlos/Downloads/primary.ovpn '';
-      autoStart = false;
-    };
-  };
 
   environment.systemPackages = with pkgs; [
     iw

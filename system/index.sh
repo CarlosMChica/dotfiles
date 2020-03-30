@@ -23,16 +23,21 @@ alias dotfiles='(cd "$DOTFILES_LOCATION" && emacs -nw)'
 alias ffs='sudo $(fc -ln -1)'
 alias shortcuts="$DOTFILES_LOCATION/config/shortcuts/shortcuts.sh"
 alias cls='printf "\033c"'
-alias wgup='sudo wg-quick up wg0-client'
-alias wgdown='sudo wg-quick down wg0-client'
-alias wgCoduranceUp='sudo wg-quick up codu-client'
-alias wgCoduranceDown='sudo wg-quick down codu-client'
-alias ovpnPrimaryUp='systemctl start openvpn-primaryVPN.service'
-alias ovpnPrimaryDown='systemctl stop openvpn-primaryVPN.service'
+alias vpnHabitoUp='nmcli connection up Office\ VPN'
+alias vpnHabitoDown='nmcli connection down Office\ VPN'
+alias reconnectNordvpn='nordvpn -o ~/Downloads/primary.ovpn -c ~/credentials.txt'
 alias mountWindows='sudo mount /dev/sda4 /windows'
 alias emptyTrash='rm -rf ~/.local/share/Trash/*'
 alias restartX='systemctl restart display-manager.service'
-alias reconnectNordvpn='nordvpn -o ~/Downloads/primary.ovpn -c ~/credentials.txt'
+
+vpnPrimaryUp () {
+  nmcli connection import type openvpn file ~/Downloads/primary.ovpn
+  nmcli connection up primary
+}
+
+vpnPrimaryDown () {
+  nmcli connection down primary
+}
 
 yankClip () {
   YANK_CMD_PATH=$(which yank)

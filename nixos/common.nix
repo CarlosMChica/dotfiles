@@ -50,6 +50,7 @@
   services.xserver = {
     enable = true;
     layout = "us";
+    exportConfiguration = true;
   };
 
   security.sudo.configFile = "%wheel ALL=(ALL) ALL";
