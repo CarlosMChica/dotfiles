@@ -42,6 +42,16 @@
       ("undefined" . ?⊥)
       ("\\" . ?λ))))
 
+(use-package ormolu
+ :hook (haskell-mode . ormolu-format-on-save-mode)
+ :config
+ (global-set-key (kbd "C-c r") 'ormolu-format-buffer)
+ :ensure t
+ :mode "\\.hs$"
+ :defer t
+ :after reformatter
+ )
+
 (use-package
   haskell-mode
   :ensure t
@@ -90,34 +100,17 @@
            (add-to-list 'flycheck-disabled-checkers 'haskell-ghc)
            (add-to-list 'flycheck-disabled-checkers 'haskell-stack-ghc))))
 
-;  (use-package
-;    dante
-;    :ensure t
-;    :config
-;
-;    (evil-leader/set-key "7" 'xref-find-references)
-;    (add-hook 'dante-mode-hook
-;              '(lambda () (flycheck-add-next-checker
-;                      'haskell-dante
-;                      '(warning . haskell-hlint)))))
-
   (add-hook 'haskell-mode-hook 'programming-mode)
   (add-hook 'haskell-mode-hook 'haskell-decl-scan-mode)
   (add-hook 'haskell-mode-hook 'haskell/prettify)
   (add-hook 'haskell-mode-hook 'hs-doc)
+  ;; (add-hook 'haskell-mode-hook 'ormolu-format-on-save-mode)
 
   (defun hs-doc ()
     (interactive)
     (setq-local helm-dash-docsets '("Haskell"))))
-;  (add-hook 'haskell-mode-hook 'intero-mode))
-;  (add-hook 'haskell-mode-hook 'dante-mode))
-
-
-
-; (location-list-buffer (rx bos "*Intero-Help*"))
 
 (my/highlight-keyword-in-mode 'haskell-mode "error" nil 'font-lock-warning-face)
 (my/highlight-keyword-in-mode 'haskell-mode "undefined" nil 'font-lock-warning-face)
-
 
 (provide 'init-haskell)
