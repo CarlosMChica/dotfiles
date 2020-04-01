@@ -50,5 +50,6 @@
     (helm-do-ag rootdir)))
 
 (global-set-key (kbd "C-S-f") 'helm-do-ag-projectile-root)
+(evil-leader/set-key "hf" 'helm-do-ag-projectile-root)
 
 (provide 'init-acklike)

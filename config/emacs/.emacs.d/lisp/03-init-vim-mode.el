@@ -175,6 +175,7 @@
   :config
 
   (define-key evil-normal-state-map (kbd "C-S-L") 'clear-search-highlight)
+  (evil-leader/set-key "sl" 'clear-search-highlight)
   (evil-ex-define-cmd "noh" 'clear-search-highlight)
   (set-face-attribute 'evil-search-highlight-persist-highlight-face nil
                       :inherit 'evil-ex-search

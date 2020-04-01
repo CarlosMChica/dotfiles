@@ -75,6 +75,7 @@
 (location-list-buffer (rx bos "*helm imenu*"))
 (define-key evil-normal-state-map (kbd "C-S-o") 'helm-imenu)
 (global-set-key (kbd "C-S-o") 'helm-imenu)
+(evil-leader/set-key "o" 'helm-imenu)
 
 (defun escape-quotes (@begin @end)
     "Replace 「\"」 by 「\\\"」 in current line or text selection.
