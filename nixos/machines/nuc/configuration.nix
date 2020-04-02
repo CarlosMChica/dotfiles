@@ -34,6 +34,11 @@
     ];
   };
 
+  powerManagement = {
+    enable = true;
+    cpuFreqGovernor = "performance";
+  };
+
   services.xserver.xrandrHeads = [
     "DP1"
     {
