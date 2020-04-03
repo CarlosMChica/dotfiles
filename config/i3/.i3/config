@@ -4,16 +4,16 @@
 
 #only Workspace variables
 # To convert from font awesome U+f1d3 to symbol: https://r12a.github.io/apps/conversion/
-set $WS1 "1 "
-set $WS2 "2 "
-set $WS3 "3 "
-set $WS4 "4 "
-set $WS5 "5 "
-set $WS6 "6 "
-set $WS7 "7 "
-set $WS8 "8 "
-set $WS9 "9 "
-set $WS0 "10 "
+set $WS1 "1  "
+set $WS2 "2  "
+set $WS3 "3  "
+set $WS4 "4  "
+set $WS5 "5  "
+set $WS6 "6  "
+set $WS7 "7  "
+set $WS8 "8  "
+set $WS9 "9  "
+set $WS0 "10  "
 
 # use workspaces on different monitors
 workspace $WS5 output HDMI2
@@ -51,7 +51,8 @@ for_window [title="^Nyanyanyanyanyanyanya...$"] mark "STATWIN", fullscreen enabl
 set $mod Mod4
 
 # fonts
-font pango:Iosevka 10
+font pango:JetBrainsMono Nerd Font 10
+
 
 # Move windows with mouse+$mod
 floating_modifier $mod
@@ -60,7 +61,7 @@ floating_modifier $mod
 bindsym $mod+Return exec $TERMINAL
 bindsym $mod+Shift+q kill
 bindsym $mod+Shift+Alt+q exec --no-startup-id kill $(xprop -id `xdotool getwindowfocus` | grep '_NET_WM_PID' | grep -oE '[[:digit:]]*$')
-bindsym $mod+d exec --no-startup-id dmenu_run -i -fn 'Iosevka-10'
+bindsym $mod+d exec --no-startup-id dmenu_run -i -fn 'JetBrainsMono Nerd Font-10'
 bindsym --release Control+Shift+Print exec --no-startup-id scrot -s
 bindsym Shift+Print exec --no-startup-id scrot
 
@@ -290,7 +291,7 @@ bar {
   status_command i3blocks -c ~/dotfiles/config/i3blocks/bottom
   workspace_buttons no
   height 30
-  font pango: Iosevka 10
+  font pango: JetBrainsMono Nerd Font 10
   colors {
     separator #D8DEE9
     background #3B4252
@@ -309,7 +310,7 @@ bar {
   height 40
   tray_output primary
   tray_padding 10
-  font pango: Iosevka 10
+  font pango: JetBrainsMono Nerd Font 10
   colors {
     separator #D8DEE9
     background #3B4252
