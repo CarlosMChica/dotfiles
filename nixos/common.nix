@@ -47,12 +47,6 @@
     wget vim htop imagemagick gnumake binutils
   ];
 
-  services.xserver = {
-    enable = true;
-    layout = "us";
-    exportConfiguration = true;
-  };
-
   security.sudo.configFile = "%wheel ALL=(ALL) ALL";
 
   nixpkgs.config = {

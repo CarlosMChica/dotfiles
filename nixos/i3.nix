@@ -4,7 +4,11 @@ let
   i3blocks-hs-contrib = pkgs.haskellPackages.callPackage ./pkgs/i3blocks-hs-contrib { };
 in
 {
+
   services.xserver = {
+    enable = true;
+    layout = "us";
+    exportConfiguration = true;
     libinput = {
       disableWhileTyping = true; # doesn't work
       enable = true;
