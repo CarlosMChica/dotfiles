@@ -35,20 +35,20 @@ separator=false
 separator_block_width=7
 
 [AirplaneMode]
-interval=5
+interval=99
 
 [separator]
 
 [Temperature]
 interval=5
-label=
-min_width= 99.9 °C
+label= 
+min_width=99.9°C
 
 [separator]
 
 [Cpu]
 interval=2
-min_width= 100%
+min_width=100%
 
 [separator]
 
@@ -59,24 +59,38 @@ min_width= 16G
 [separator]
 
 [Wifi]
-interval=10
+interval=99
 
 [separator]
 
 [Bandwidth]
-min_width= 999.9MBs  999.9MBs
-interval=3
+min_width=999.9MBs 999.9MBs
+interval=5
 
 [separator]
 
 [Ip]
-interval=30
+label= 
+interval=60
 
 [separator]
 
-[OpenVpn]
-command=$HOME/.local/bin/OpenVpn -c "nordvpn -o ~/Downloads/primary.ovpn -c ~/credentials.txt -g"
-interval=2
+[Docker]
+interval=60
+
+[separator]
+
+[Volume]
+interval=5
+
+[separator]
+
+[time]
+command=$HOME/.i3blocks-scripts/$BLOCK_NAME
+label= 
+instance=2643743
+interval=10
+align=center
 
 [separator]
 
@@ -84,20 +98,3 @@ interval=2
 interval=30
 
 [separator]
-
-[Docker]
-interval=10
-
-[separator]
-
-[Volume]
-interval=1
-
-[separator]
-
-[time]
-command=$HOME/.i3blocks-scripts/$BLOCK_NAME
-label= 
-instance=2643743
-interval=10
-align=center
