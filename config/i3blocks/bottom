@@ -34,53 +34,65 @@ align=center
 separator=false
 separator_block_width=7
 
+[Battery]
+interval=30
+
+[separator]
+
 [AirplaneMode]
+command=$HOME/.local/bin/$BLOCK_NAME " " " "
 interval=99
 
 [separator]
 
 [Temperature]
+command=$HOME/.local/bin/$BLOCK_NAME " "
 interval=5
-label= 
 min_width=99.9°C
 
 [separator]
 
 [Cpu]
+command=$HOME/.local/bin/$BLOCK_NAME " "
 interval=2
 min_width=100%
 
 [separator]
 
 [Memory]
+command=$HOME/.local/bin/$BLOCK_NAME " "
 interval=2
 min_width= 16G
 
 [separator]
 
 [Wifi]
+command=$HOME/.local/bin/$BLOCK_NAME "睊 " "  "
 interval=99
 
 [separator]
 
 [Bandwidth]
-min_width=999.9MBs 999.9MBs
+min_width=999.9MBs 999.9MBs
+command=$HOME/.local/bin/$BLOCK_NAME " " " "
 interval=5
 
 [separator]
 
 [Ip]
-label= 
+command=$HOME/.local/bin/$BLOCK_NAME " "
 interval=60
 
 [separator]
 
 [Docker]
+command=$HOME/.local/bin/$BLOCK_NAME " "
 interval=60
 
 [separator]
 
 [Volume]
+command=$HOME/.local/bin/$BLOCK_NAME "婢 " " " "墳 "
 interval=5
 
 [separator]
@@ -91,10 +103,3 @@ label=
 instance=2643743
 interval=10
 align=center
-
-[separator]
-
-[Battery]
-interval=30
-
-[separator]
