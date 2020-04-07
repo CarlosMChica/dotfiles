@@ -35,6 +35,7 @@ separator=false
 separator_block_width=7
 
 [Battery]
+command=$HOME/.local/bin/$BLOCK_NAME "" " " " " " " " " " "
 interval=30
 
 [separator]
