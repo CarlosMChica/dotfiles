@@ -1,8 +1,5 @@
 { config, pkgs, ... }:
 
-let
-  i3blocks-hs-contrib = pkgs.haskellPackages.callPackage ./pkgs/i3blocks-hs-contrib { };
-in
 {
 
   services.xserver = {
@@ -50,7 +47,7 @@ in
     xfce.thunar-archive-plugin
     compton
     parcellite
-#    i3blocks-hs-contrib
     masterpdfeditor
+
     ];
 }

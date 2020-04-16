@@ -27,6 +27,7 @@
     tldr
     glances
     killall
+    ncdu
   ];
 
   programs = {
