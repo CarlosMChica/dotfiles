@@ -50,8 +50,8 @@
   (disable-arrow-keys)
 
   ;; Visual line navigation
-  (define-key evil-motion-state-map (kbd "j") 'evil-next-visual-line)
-  (define-key evil-motion-state-map (kbd "k") 'evil-previous-visual-line)
+  ;; (define-key evil-motion-state-map (kbd "j") 'evil-next-visual-line)
+  ;; (define-key evil-motion-state-map (kbd "k") 'evil-previous-visual-line)
 
   ;; Window navigation
   (define-key evil-motion-state-map (kbd "C-w <up>") 'evil-window-up)
