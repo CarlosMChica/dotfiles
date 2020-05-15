@@ -8,6 +8,10 @@ alias gpf='git push --force-with-lease'
 alias gds='git diff --staged'
 alias gssc='git status -s | awk '\''{printf("%0d %s\n", NR, $0)}'\'''
 
+grbih () {
+  git rebase -i HEAD~"$1"
+}
+
 gcoc() {
   gco $(gss | sed -n "$1p" | sed s/^...//)
 }
