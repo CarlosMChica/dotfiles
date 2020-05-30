@@ -65,6 +65,7 @@ bindsym $mod+Shift+Alt+q exec --no-startup-id kill $(xprop -id `xdotool getwindo
 bindsym $mod+d exec --no-startup-id dmenu_run -i -fn 'JetBrainsMono Nerd Font-10'
 bindsym --release Control+Shift+Print exec --no-startup-id scrot -s
 bindsym Shift+Print exec --no-startup-id scrot
+bindsym $mod+Shift+d exec --no-startup-id nix-shell-launcher.sh
 
 # change focus
 bindsym $mod+j focus left
