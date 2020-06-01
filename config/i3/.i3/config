@@ -100,7 +100,6 @@ for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
 for_window [title="Preferences$"] floating enable
 for_window [class="feh"] floating enable
-for_window [class="feh"] floating enable
 for_window [instance="pavucontrol"] floating enable
 for_window [class="Thunderbird"] floating enable
 for_window [instance="chrome_app_list"] floating enable
@@ -283,7 +282,8 @@ mode "$mode_workspaces" {
 bindsym $mod+Shift+w mode "$mode_workspaces"
 
 # wallpaper
-exec --no-startup-id variety
+# exec --no-startup-id variety
+exec --no-startup-id nitrogen --restore
 
 bar {
   position bottom
