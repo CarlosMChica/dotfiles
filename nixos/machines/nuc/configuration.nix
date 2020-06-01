@@ -39,16 +39,15 @@
     cpuFreqGovernor = "performance";
   };
 
-  services.xserver.xrandrHeads = [
-    "DP1"
-    {
-      output = "DP2";
-      primary = true;
-    }
-    {
-      output = "HDMI2";
-      monitorConfig = "Option \"Rotate\" \"left\"";
-    }
-  ];
+  environment.variables = {
+    MESA_LOADER_DRIVER_OVERRIDE = "iris";
+  };
+
+  hardware.opengl.package = (
+    pkgs.mesa.override {
+      galliumDrivers = [ "nouveau" "virgl" "swrast" "iris" ];
+    }).drivers;
+
+  services.xserver.videoDrivers = [ "iris" "intel" "vesa" ];
 
 }
