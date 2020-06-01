@@ -28,6 +28,9 @@
     glances
     killall
     ncdu
+    intel-gpu-tools
+    pciutils
+    glxinfo
   ];
 
   programs = {
