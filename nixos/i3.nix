@@ -14,13 +14,20 @@
       package = pkgs.i3-gaps;
       enable = true;
       extraSessionCommands = ''
-        compton -c -i 0.95 -b &
         dropbox &
         parcellite -n &
         google-chrome-stable &
-        rambox &
+        slack &
         nm-applet &
       '';
+    };
+  };
+
+  services.picom = {
+    enable = true;
+    settings = {
+      inactive-opacity = 0.95;
+      inactive-dim = 0.4;
     };
   };
 
@@ -45,9 +52,9 @@
     xfce.thunar-volman
     xfce.thunar-dropbox-plugin
     xfce.thunar-archive-plugin
-    compton
     parcellite
     masterpdfeditor
-
+    variety
+    nitrogen
     ];
 }
