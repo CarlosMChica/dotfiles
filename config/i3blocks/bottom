@@ -47,7 +47,7 @@ interval=99
 [separator]
 
 [Temperature]
-command=$HOME/.local/bin/$BLOCK_NAME " "
+command=$HOME/.local/bin/$BLOCK_NAME "id 0" " "
 interval=5
 min_width=99.9°C
 
