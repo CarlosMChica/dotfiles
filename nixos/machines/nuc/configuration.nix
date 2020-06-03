@@ -43,10 +43,23 @@
     MESA_LOADER_DRIVER_OVERRIDE = "iris";
   };
 
-  hardware.opengl.package = (
-    pkgs.mesa.override {
-      galliumDrivers = [ "nouveau" "virgl" "swrast" "iris" ];
-    }).drivers;
+  hardware.opengl = {
+    enable = true;
+    package = (
+      pkgs.mesa.override {
+        galliumDrivers = [ "nouveau" "virgl" "swrast" "iris" ];
+      }).drivers;
+    extraPackages = with pkgs; [
+      vaapiIntel
+      vaapiVdpau
+      libvdpau-va-gl
+      intel-media-driver # only available starting nixos-19.03 or the current nixos-unstable
+    ];
+  };
+
+  nixpkgs.config.packageOverrides = pkgs: {
+    vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
+  };
 
   services.xserver.videoDrivers = [ "iris" "intel" "vesa" ];
 
