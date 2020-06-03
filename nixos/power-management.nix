@@ -1,9 +1,8 @@
 { config, pkgs, ... }:
 
 {
-  services.logind.extraConfig =
-    ''
+  services.logind.extraConfig = ''
     IdleAction=suspend
-    IdleActionSec=1200
+    IdleActionSec=300
   '';
 }

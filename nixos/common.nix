@@ -28,6 +28,7 @@
       ./javascript.nix
       ./users.nix
       ./bluetooth.nix
+      ./power-management.nix
     ];
 
   # Select internationalisation properties.
