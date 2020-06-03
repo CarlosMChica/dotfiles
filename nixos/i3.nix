@@ -56,5 +56,6 @@
     masterpdfeditor
     variety
     nitrogen
+    xorg.xvinfo
     ];
 }
