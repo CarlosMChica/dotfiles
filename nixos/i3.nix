@@ -3,6 +3,7 @@
 {
 
   services.xserver = {
+    displayManager.startx.enable = true;
     enable = true;
     layout = "us";
     exportConfiguration = true;
