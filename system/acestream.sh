@@ -18,5 +18,5 @@ playAcestream() {
   }
 
   startAcestream
-  vlc "http://127.0.0.1:6878/ace/getstream?id=$STREAM_ID"
+  QT_AUTO_SCREEN_SCALE_FACTOR=0 vlc "http://127.0.0.1:6878/ace/getstream?id=$STREAM_ID"
 }
