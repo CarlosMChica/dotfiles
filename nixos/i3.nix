@@ -2,8 +2,9 @@
 
 {
 
+  services.fractalart.enable = true;
   services.xserver = {
-    displayManager.startx.enable = true;
+    displayManager.gdm.enable = true;
     enable = true;
     layout = "us";
     exportConfiguration = true;
@@ -55,7 +56,6 @@
     xfce.thunar-archive-plugin
     parcellite
     masterpdfeditor
-    variety
     nitrogen
     xorg.xvinfo
     ];
