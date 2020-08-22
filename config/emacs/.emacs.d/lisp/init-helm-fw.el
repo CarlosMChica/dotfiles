@@ -13,7 +13,7 @@
      (helm-mode 1)
      (define-key evil-normal-state-map (kbd "<backtab>") 'helm-mini)
      (setq
-       helm-quick-update t
+       ;; helm-quick-update t
        helm-bookmark-show-location t
        helm-buffers-fuzzy-matching t
        helm-recentf-fuzzy-matching t

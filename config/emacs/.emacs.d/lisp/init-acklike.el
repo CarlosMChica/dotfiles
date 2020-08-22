@@ -1,28 +1,28 @@
 (require 'grep)
 
-(evil-define-command
-  evil-ack (to-search)
-  (interactive "<a>")
-  (my-ack to-search (projectile-project-root)))
+;; (evil-define-command
+;;   evil-ack (to-search)
+;;   (interactive "<a>")
+;;   (my-ack to-search (projectile-project-root)))
 
-(evil-define-command
-  evil-ack-in (to-search path)
-  (interactive "<a>\n"  (list (read-file-name (projectile-project-root))))
-  (my-ack to-search path))
-(location-list-buffer (rx bos "*helm-mode-evil-ack-in*"))
-(location-list-buffer (rx bos "*grep*"))
+;; (evil-define-command
+;;   evil-ack-in (to-search path)
+;;   (interactive "<a>\n"  (list (read-file-name (projectile-project-root))))
+;;   (my-ack to-search path))
+;; (location-list-buffer (rx bos "*helm-mode-evil-ack-in*"))
+;; (location-list-buffer (rx bos "*grep*"))
 
-(defun my-ack (arg path-to-search)
-  (progn (grep-compute-defaults)
-         (rgrep arg "*.*" path-to-search)))
+;; (defun my-ack (arg path-to-search)
+;;   (progn (grep-compute-defaults)
+;;          (rgrep arg "*.*" path-to-search)))
 
-(evil-ex-define-cmd "Ack" 'evil-ack)
-(evil-ex-define-cmd "ack" 'evil-ack)
-(evil-ex-define-cmd "ackin" 'evil-ack-in)
+;; (evil-ex-define-cmd "Ack" 'evil-ack)
+;; (evil-ex-define-cmd "ack" 'evil-ack)
+;; (evil-ex-define-cmd "ackin" 'evil-ack-in)
 
-(customize-set-variable
-  'grep-find-ignored-directories
-  (list "SCCS" "RCS" "CVS" "MCVS" ".svn" "coverage" ".git" ".hg" ".bzr" "_MTN" "_darcs" "{arch}" "objects" "build" "bin" "out" "lib" "dist" "node_modules" ".nyc_output" ".awcache" ".stack-work"))
+;; (customize-set-variable
+;;   'grep-find-ignored-directories
+;;   (list "SCCS" "RCS" "CVS" "MCVS" ".svn" "coverage" ".git" ".hg" ".bzr" "_MTN" "_darcs" "{arch}" "objects" "build" "bin" "out" "lib" "dist" "node_modules" ".nyc_output" ".awcache" ".stack-work"))
 
 (use-package
   xah-find
@@ -36,11 +36,13 @@
   :ensure t
   :defer t
   :config
-  (custom-set-variables
-   '(helm-ag-command-option "--hidden --width 120 --ignore bower_components/ --ignore node_modules/ --ignore build/ --ignore output/ --ignore dist/ --ignore .stack-work/ --ignore .git/")
-   '(helm-ag-use-grep-ignore-list t)
-   '(helm-ag-insert-at-point 'word)
-   '(helm-ag-use-agignore t)))
+  ;; (custom-set-variables
+   ;; '(helm-ag-command-option "--hidden --width 120 --ignore bower_components/ --ignore node_modules/ --ignore build/ --ignore output/ --ignore dist/ --ignore .stack-work/ --ignore .git/")
+   ;; '(helm-ag-use-grep-ignore-list t)
+   ;; '(helm-ag-insert-at-point 'word)
+   ;; '(helm-ag-use-agignore t)
+  ;; )
+  )
 
 (defun helm-do-ag-projectile-root ()
   (interactive)

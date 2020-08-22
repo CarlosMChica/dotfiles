@@ -44,12 +44,13 @@
 
 (use-package ormolu
  :hook (haskell-mode . ormolu-format-on-save-mode)
- :config
- (global-set-key (kbd "C-c r") 'ormolu-format-buffer)
  :ensure t
  :mode "\\.hs$"
  :defer t
- :after reformatter
+ :after (reformatter haskell-mode)
+ :bind
+ (:map haskell-mode-map
+  ("C-c r" . ormolu-format-buffer))
  )
 
 (use-package
@@ -112,5 +113,52 @@
 
 (my/highlight-keyword-in-mode 'haskell-mode "error" nil 'font-lock-warning-face)
 (my/highlight-keyword-in-mode 'haskell-mode "undefined" nil 'font-lock-warning-face)
+
+;; (use-package eglot
+;;   :ensure t
+;;   :config
+;;   (add-to-list 'eglot-server-programs '(haskell-mode . ( "/home/carlos/repositories/habito/.ghcide" "--lsp"))))
+
+(use-package lsp-mode
+  :ensure t
+  :hook (haskell-mode . lsp)
+  :commands lsp
+  :config
+  (setq lsp-enable-file-watchers nil)
+  (setq lsp-log-io t)
+  (setq lsp-enable-xref t)
+  (setq lsp-enable-imenu t)
+  (setq lsp-signature-auto-activate t)
+  (setq lsp-signature-render-documentation t)
+  )
+
+(use-package lsp-ui
+  :ensure t
+  :commands lsp-ui-mode
+  :config
+  (define-key lsp-ui-mode-map [remap xref-find-definitions] #'lsp-ui-peek-find-definitions)
+  (define-key lsp-ui-mode-map [remap xref-find-references] #'lsp-ui-peek-find-references)
+  (setq lsp-ui-sideline-show-diagnostics t)
+  (setq lsp-ui-sideline-show-hover t)
+  (setq lsp-ui-sideline-show-code-actions t)
+  (setq sp-ui-sideline-update-mode 'point))
+
+(use-package lsp-haskell
+ :ensure t
+ :config
+ (setq lsp-haskell-process-path-hie "ghcide")
+ (setq lsp-haskell-process-args-hie '())
+ ;; Comment/uncomment this line to see interactions between lsp client/server.
+ (setq lsp-log-io t)
+ ;; (setq lsp-auto-guess-root nil)
+ )
+
+(use-package auto-package-update
+   :ensure t
+   :config
+   (setq auto-package-update-delete-old-versions t
+         auto-package-update-interval 4
+         auto-package-update-prompt-before-update t)
+   (auto-package-update-maybe))
 
 (provide 'init-haskell)

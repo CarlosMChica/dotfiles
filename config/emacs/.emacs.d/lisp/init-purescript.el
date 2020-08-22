@@ -28,6 +28,6 @@
       (purescript-navigate-imports-return))))
 
 (use-package psci :ensure t :defer t)
-(use-package flycheck-purescript :ensure t :defer t)
+;; (use-package flycheck-purescript :ensure t :defer t)
 
 (provide 'init-purescript)

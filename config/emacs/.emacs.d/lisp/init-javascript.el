@@ -43,7 +43,6 @@
         js2-strict-missing-semi-warning nil)
 
   (set-compile-for 'js-mode "yarn test:unit")
-  ;(set-company-backend-for 'js-mode-hook 'company-tern)
 
   (add-hook 'js-mode-hook 'programming-mode)
   (add-hook 'js-mode-hook 'tern-mode)
@@ -93,8 +92,6 @@
         js-indent-level 2)
   (add-hook 'json-mode-hook 'whitespace-mode)
   (add-hook 'json-mode-hook 'proper-gutter-mode))
-
-(use-package company-tern :ensure t :defer t)
 
 (defun js-doc ()
   (interactive)

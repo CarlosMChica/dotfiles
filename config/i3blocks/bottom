@@ -75,7 +75,7 @@ interval=99
 
 [Bandwidth]
 min_width=999.9MBs 999.9MBs
-command=$HOME/.local/bin/$BLOCK_NAME " " " "
+command=$HOME/.local/bin/$BLOCK_NAME " " " " 
 interval=5
 
 [separator]
