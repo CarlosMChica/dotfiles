@@ -41,10 +41,11 @@ Temporary Items
 config/vpn/server.ovpn
 result
 
-#Emacs recentf
+#Emacs 
 recentf
 projectile-bookmarks.eld
 projectile.cache
 network-security.data
 .cache/
 transient/
+.last-package-update-day
