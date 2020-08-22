@@ -10,8 +10,7 @@
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 
 (setq package-enable-at-startup nil)
-(when (version< emacs-version "27")
-  (package-initialize))
+(package-initialize)
 
 (defvar *is-a-mac* (eq system-type 'darwin))
 (defvar *cygwin* (eq system-type 'cygwin))
