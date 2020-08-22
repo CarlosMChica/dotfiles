@@ -297,7 +297,7 @@ bar {
   status_command i3blocks -c ~/dotfiles/config/i3blocks/bottom
   workspace_buttons no
   height 34
-  font pango: JetBrainsMono Nerd Font 14
+  font pango: JetBrainsMono Nerd Font 10
   colors {
     separator #D8DEE9
     background #3B4252
@@ -315,8 +315,8 @@ bar {
   workspace_buttons yes
   height 50
   tray_output primary
-  tray_padding 10
-  font pango: JetBrainsMono Nerd Font 14
+  tray_padding 8
+  font pango: JetBrainsMono Nerd Font 10
   colors {
     separator #D8DEE9
     background #3B4252

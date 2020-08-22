@@ -3,7 +3,7 @@ URxvt.intensityStyles: false
 URxvt.background: #2E3440
 URxvt.internalBorder: 0
 !URxvt.depth: 24
-URxvt.font: xft:JetBrainsMono Nerd Font:size=14
+URxvt.font: xft:JetBrainsMono Nerd Font:size=10
 URxvt.cursorColor: #D8DEE9
 URxvt*skipBuiltinGlyphs: true
 Urxvt*saveLines: 65535
