@@ -1,1 +1,3 @@
 #include ".Xdefaults"
+
+Xcursor.size: 22
