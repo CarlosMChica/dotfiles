@@ -37,6 +37,7 @@
     xorg.xkill
     xorg.xbacklight
     xorg.xwininfo
+    xorg.xdpyinfo
     acpi
 
     dmenu
@@ -58,5 +59,10 @@
     masterpdfeditor
     nitrogen
     xorg.xvinfo
-    ];
+    lxappearance
+  ];
+
+  environment.etc."ipsec.secrets".text = ''
+    include ipsec.d/ipsec.nm-l2tp.secrets
+  '';
 }
