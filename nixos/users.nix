@@ -1,6 +1,11 @@
 { config, pkgs, ... }:
 
 {
+
+
+  nix.trustedUsers = [ "root" "carlos" "@wheel" "@sudo" ];
+  nix.nrBuildUsers = 128;
+
   users.extraUsers.carlos = {
      isNormalUser = true;
      uid = 1000;
