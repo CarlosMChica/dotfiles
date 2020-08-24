@@ -13,14 +13,9 @@
   :group 'mysetup)
 
 ;; Fonts
-(defcustom my-font "JetBrainsMono Nerd Font"
+(defcustom my-font "JetBrainsMono Nerd Font 8"
   "Emacs font"
   :type 'string
-  :group 'mysetup)
-
-(defcustom my-font-height 150
-  "Emacs font height"
-  :type 'integer
   :group 'mysetup)
 
 ;; Themes
