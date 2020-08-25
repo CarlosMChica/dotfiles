@@ -42,4 +42,6 @@
   (set-default-font my-font)
   (set-face-attribute 'default nil :font my-font))
 
+(set-mouse-color "white")
+
 (provide '02-init-appearance)
