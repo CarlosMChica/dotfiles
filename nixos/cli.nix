@@ -31,6 +31,8 @@
     intel-gpu-tools
     pciutils
     glxinfo
+    kubectl
+    bazel
   ];
 
   programs = {
