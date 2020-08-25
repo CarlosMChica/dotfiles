@@ -17,4 +17,9 @@
     wireguard
     linuxHeaders
   ];
+
+  environment.etc."ipsec.secrets".text = ''
+    include ipsec.d/ipsec.nm-l2tp.secrets
+  '';
+
 }

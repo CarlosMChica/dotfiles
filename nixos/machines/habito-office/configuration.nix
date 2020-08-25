@@ -41,4 +41,13 @@
     cpuFreqGovernor = "performance";
   };
 
+  fileSystems."/data" =
+  { device = "/dev/disk/by-uuid/bac04cbe-8c31-4ab9-959b-7ca571796e0f";
+    fsType = "ext4";
+  };
+
+  virtualisation.docker = {
+    extraOptions = "--data-root /data/docker";
+  };
+
 }
