@@ -49,3 +49,8 @@ network-security.data
 .cache/
 transient/
 .last-package-update-day
+.lsp-session-v1
+
+#stack
+*/.stack/pantry
+*/.stack/stack.sql*
