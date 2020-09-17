@@ -25,15 +25,13 @@
         efiSupport = true;
       };
     };
-    initrd.luks.devices = [
-      {
-        name = "root";
-        # blkid gives you back the disk id
+    initrd.luks.devices = {
+      root = {
         device = "/dev/disk/by-uuid/624e2092-b6bf-46c8-87a4-467a73c0eff6";
         preLVM = true;
         allowDiscards = true;
-      }
-    ];
+      };
+    };
   };
 
   powerManagement = {
@@ -49,5 +47,9 @@
   virtualisation.docker = {
     extraOptions = "--data-root /data/docker";
   };
+
+  systemd.extraConfig = ''
+    ShutdownWatchdogSec=20s
+  '';
 
 }
