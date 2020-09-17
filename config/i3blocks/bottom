@@ -34,35 +34,23 @@ align=center
 separator=false
 separator_block_width=7
 
-[Battery]
-command=$HOME/.local/bin/$BLOCK_NAME "" " " " " " " " " " "
-interval=30
-
-[separator]
-
-[AirplaneMode]
-command=$HOME/.local/bin/$BLOCK_NAME " " " "
-interval=99
-
-[separator]
-
 [Temperature]
 command=$HOME/.local/bin/$BLOCK_NAME "id 0" " "
-interval=5
+interval=10
 min_width=99.9°C
 
 [separator]
 
 [Cpu]
 command=$HOME/.local/bin/$BLOCK_NAME " "
-interval=2
+interval=10
 min_width=100%
 
 [separator]
 
 [Memory]
 command=$HOME/.local/bin/$BLOCK_NAME " "
-interval=2
+interval=10
 min_width= 16G
 
 [separator]
