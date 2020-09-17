@@ -52,5 +52,5 @@ transient/
 .lsp-session-v1
 
 #stack
-*/.stack/pantry
-*/.stack/stack.sql*
+config/stack/.stack/pantry
+config/stack/.stack/stack.sql*
