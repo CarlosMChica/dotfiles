@@ -16,9 +16,9 @@ set $WS9 "9  "
 set $WS0 "10  "
 
 # use workspaces on different monitors
-workspace $WS5 output HDMI2
+workspace $WS5 output DP0
 workspace $WS2 output DP2
-workspace $WS1 output DP1
+workspace $WS1 output HDMI0
 
 # Default terminal emulator
 set $TERMINAL urxvt
@@ -292,6 +292,7 @@ bindsym $mod+Shift+w mode "$mode_workspaces"
 exec --no-startup-id nitrogen --restore
 
 bar {
+  output HDMI-0
   position bottom
   tray_output none
   status_command i3blocks -c ~/dotfiles/config/i3blocks/bottom
