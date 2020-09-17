@@ -2,21 +2,29 @@
 
 {
 
-  services.fractalart.enable = true;
-  services.xserver = {
-    displayManager.gdm.enable = true;
+   environment.variables = {
+    GDK_SCALE = "2";
+    GDK_DPI_SCALE = "0.5";
+    QT_AUTO_SCREEN_SCALE_FACTOR = "1";
+    XCURSOR_SIZE= "128";
+   };
+
+   services.xserver = {
+    displayManager = {
+      gdm.enable = true;
+    };
+    dpi = 144;
     enable = true;
     layout = "us";
     exportConfiguration = true;
     libinput = {
-      disableWhileTyping = true; # doesn't work
+      disableWhileTyping = true;
       enable = true;
     };
     windowManager.i3 = {
       package = pkgs.i3-gaps;
       enable = true;
       extraSessionCommands = ''
-        dropbox &
         parcellite -n &
         google-chrome-stable &
         slack &
@@ -27,6 +35,7 @@
 
   services.picom = {
     enable = true;
+    backend = "glx";
     settings = {
       inactive-opacity = 0.95;
       inactive-dim = 0.4;
@@ -60,9 +69,8 @@
     nitrogen
     xorg.xvinfo
     lxappearance
+    xorg.xcursorthemes
+    vanilla-dmz
   ];
 
-  environment.etc."ipsec.secrets".text = ''
-    include ipsec.d/ipsec.nm-l2tp.secrets
-  '';
 }
