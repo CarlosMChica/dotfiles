@@ -3,7 +3,7 @@
   :ensure t
   :defer t
   :config
-  (setq highlight-indent-guides-method 'character)
+  (setq highlight-indent-guides-method 'column)
   (setq highlight-indent-guides-responsive 'top))
 
 (provide 'init-indentation)
