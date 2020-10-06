@@ -140,7 +140,7 @@
   (define-key lsp-ui-mode-map [remap xref-find-references] #'lsp-ui-peek-find-references)
   (setq lsp-ui-sideline-show-diagnostics t)
   (setq lsp-ui-sideline-show-hover t)
-  (setq lsp-ui-sideline-show-code-actions t)
+  (setq lsp-ui-sideline-show-code-actions f)
   (setq sp-ui-sideline-update-mode 'point))
 
 (use-package lsp-haskell
