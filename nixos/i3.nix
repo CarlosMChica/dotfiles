@@ -11,7 +11,7 @@
 
    services.xserver = {
     displayManager = {
-      gdm.enable = true;
+      startx.enable = true;
     };
     dpi = 144;
     enable = true;
