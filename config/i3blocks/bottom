@@ -36,21 +36,21 @@ separator_block_width=7
 
 [Temperature]
 command=$HOME/.local/bin/$BLOCK_NAME "id 0" " "
-interval=10
+interval=60
 min_width=99.9°C
 
 [separator]
 
 [Cpu]
 command=$HOME/.local/bin/$BLOCK_NAME " "
-interval=10
+interval=30
 min_width=100%
 
 [separator]
 
 [Memory]
 command=$HOME/.local/bin/$BLOCK_NAME " "
-interval=10
+interval=30
 min_width= 16G
 
 [separator]
@@ -64,7 +64,7 @@ interval=99
 [Bandwidth]
 min_width=999.9MBs 999.9MBs
 command=$HOME/.local/bin/$BLOCK_NAME " " " " 
-interval=5
+interval=3
 
 [separator]
 
@@ -82,7 +82,7 @@ interval=60
 
 [Volume]
 command=$HOME/.local/bin/$BLOCK_NAME "婢 " " " "墳 "
-interval=5
+interval=1
 
 [separator]
 
@@ -90,5 +90,5 @@ interval=5
 command=$HOME/.i3blocks-scripts/$BLOCK_NAME
 label= 
 instance=2643743
-interval=10
+interval=60
 align=center
