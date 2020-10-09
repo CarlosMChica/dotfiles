@@ -46,8 +46,6 @@
  :hook (haskell-mode . ormolu-format-on-save-mode)
  :ensure t
  :mode "\\.hs$"
- :defer t
- :after (reformatter haskell-mode)
  :bind
  (:map haskell-mode-map
   ("C-c r" . ormolu-format-buffer))
@@ -59,16 +57,6 @@
   :mode "\\.hs$"
   :defer t
   :config
-;  (use-package
-;    intero
-;    :ensure t
-;    :config
-;    (flycheck-add-next-checker 'intero '(warning . haskell-hlint))
-;    (global-set-key (kbd "C-g") 'intero-goto-definition)
-;    (global-set-key (kbd "M-n") 'intero-highlight-uses-mode-next)
-;    (global-set-key (kbd "M-p") 'intero-highlight-uses-mode-prev)
-;    (global-set-key (kbd "ESC <f7>") 'intero-uses-at))
-
   (use-package company-ghci :ensure t)
 
   (custom-set-variables '(haskell-stylish-on-save nil))
@@ -113,11 +101,6 @@
 
 (my/highlight-keyword-in-mode 'haskell-mode "error" nil 'font-lock-warning-face)
 (my/highlight-keyword-in-mode 'haskell-mode "undefined" nil 'font-lock-warning-face)
-
-;; (use-package eglot
-;;   :ensure t
-;;   :config
-;;   (add-to-list 'eglot-server-programs '(haskell-mode . ( "/home/carlos/repositories/habito/.ghcide" "--lsp"))))
 
 (use-package lsp-mode
   :ensure t
