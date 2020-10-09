@@ -53,4 +53,6 @@ transient/
 
 #stack
 config/stack/.stack/pantry
+config/stack/.stack/snapshots/*
 config/stack/.stack/stack.sql*
+config/stack/.stack/global-project/*
