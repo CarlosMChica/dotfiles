@@ -104,8 +104,8 @@
 
 (use-package lsp-mode
   :ensure t
-  :hook (haskell-mode . lsp)
-  :commands lsp
+  :hook (haskell-mode . lsp-deferred)
+  :commands (lsp lsp-deferred)
   :config
   (setq lsp-enable-file-watchers nil)
   (setq lsp-log-io t)
@@ -113,6 +113,11 @@
   (setq lsp-enable-imenu t)
   (setq lsp-signature-auto-activate t)
   (setq lsp-signature-render-documentation t)
+  )
+
+(use-package helm-lsp 
+  :ensure t
+  :commands helm-lsp-workspace-symbol
   )
 
 (use-package lsp-ui
@@ -124,13 +129,15 @@
   (setq lsp-ui-sideline-show-diagnostics t)
   (setq lsp-ui-sideline-show-hover t)
   (setq lsp-ui-sideline-show-code-actions f)
-  (setq sp-ui-sideline-update-mode 'point))
+  (setq lsp-ui-sideline-update-mode 'point))
 
 (use-package lsp-haskell
  :ensure t
  :config
- (setq lsp-haskell-process-path-hie "ghcide")
- (setq lsp-haskell-process-args-hie '())
+ (add-hook 'haskell-mode-hook #'lsp)
+ (add-hook 'haskell-literate-mode-hook #'lsp)
+ (setq lsp-haskell-server-path "ghcide")
+ (setq lsp-haskell-server-args '())
  ;; Comment/uncomment this line to see interactions between lsp client/server.
  (setq lsp-log-io t)
  ;; (setq lsp-auto-guess-root nil)
