@@ -1,9 +1,9 @@
 (use-package evil
   :ensure t
   :init (setq evil-want-keybinding nil)
+  :custom (evil-undo-system 'undo-tree)
   :config
   (evil-mode 1)
-
   (unless (display-graphic-p)
     (use-package
       evil-terminal-cursor-changer
@@ -196,5 +196,11 @@
   "Kill all other buffers."
   (interactive)
         (mapc 'kill-buffer (delq (current-buffer) (buffer-list))))
+
+(use-package
+  undo-tree
+  :ensure t
+  :config
+  (global-undo-tree-mode))
 
 (provide '03-init-vim-mode)
