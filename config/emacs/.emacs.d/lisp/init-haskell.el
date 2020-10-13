@@ -43,7 +43,7 @@
       ("\\" . ?λ))))
 
 (use-package ormolu
- :hook (haskell-mode . ormolu-format-on-save-mode)
+ ;:hook (haskell-mode . ormolu-format-on-save-mode)
  :ensure t
  :mode "\\.hs$"
  :bind
@@ -128,7 +128,7 @@
   (define-key lsp-ui-mode-map [remap xref-find-references] #'lsp-ui-peek-find-references)
   (setq lsp-ui-sideline-show-diagnostics t)
   (setq lsp-ui-sideline-show-hover t)
-  (setq lsp-ui-sideline-show-code-actions f)
+  (setq lsp-ui-sideline-show-code-actions nil)
   (setq lsp-ui-sideline-update-mode 'point))
 
 (use-package lsp-haskell
