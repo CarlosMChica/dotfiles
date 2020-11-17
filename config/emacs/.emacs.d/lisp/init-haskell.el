@@ -1,56 +1,5 @@
 (require 'init-programming-mode)
 
-(defun haskell/prettify ()
-  (prettify
-    '(
-      ("forall" . ?∀)
-      ("exists" . ?∃)
-
-      ("->" . ?→)
-      ("<-" . ?←)
-      ("=>" . ?⇒)
-
-      ("|->" . ?↦)
-      ("<-|" . ?↤)
-
-      ("~>" . ?⇝)
-      ("<~" . ?⇜)
-
-      (">->" . ?↣)
-      ("<-<" . ?↢)
-
-      ("not" . ?¬)
-      ("&&" . ?∧)
-      ("||" . ?∨)
-
-      ("==" . ?≡)
-      ("/=" . ?≠)
-      ("<=" . ?≤)
-      (">=" . ?≥)
-
-      ("elem" . ?∈)
-      ("notElem" . ?∉)
-      ("member" . ?∈)
-      ("notMember" . ?∉)
-      ("union" . ?∪)
-      ("intersection" . ?∩)
-      ("isSubsetOf" . ?⊆)
-      ("isProperSubsetOf" . ?⊂)
-
-      ("<<" . ?≪)
-      (">>" . ?≫)
-      ("undefined" . ?⊥)
-      ("\\" . ?λ))))
-
-(use-package ormolu
- ;:hook (haskell-mode . ormolu-format-on-save-mode)
- :ensure t
- :mode "\\.hs$"
- :bind
- (:map haskell-mode-map
-  ("C-c r" . ormolu-format-buffer))
- )
-
 (use-package
   haskell-mode
   :ensure t
@@ -91,9 +40,8 @@
 
   (add-hook 'haskell-mode-hook 'programming-mode)
   (add-hook 'haskell-mode-hook 'haskell-decl-scan-mode)
-  (add-hook 'haskell-mode-hook 'haskell/prettify)
+  ;;(add-hook 'haskell-mode-hook 'haskell/prettify)
   (add-hook 'haskell-mode-hook 'hs-doc)
-  ;; (add-hook 'haskell-mode-hook 'ormolu-format-on-save-mode)
 
   (defun hs-doc ()
     (interactive)
@@ -128,7 +76,8 @@
   (define-key lsp-ui-mode-map [remap xref-find-references] #'lsp-ui-peek-find-references)
   (setq lsp-ui-sideline-show-diagnostics t)
   (setq lsp-ui-sideline-show-hover t)
-  (setq lsp-ui-sideline-show-code-actions nil)
+  (setq lsp-ui-sideline-show-code-actions t)
+  (setq lsp-ui-sideline-show-symbol nil)
   (setq lsp-ui-sideline-update-mode 'point))
 
 (use-package lsp-haskell
@@ -136,8 +85,8 @@
  :config
  (add-hook 'haskell-mode-hook #'lsp)
  (add-hook 'haskell-literate-mode-hook #'lsp)
- (setq lsp-haskell-server-path "ghcide")
- (setq lsp-haskell-server-args '())
+ ;;(setq lsp-haskell-server-path "ghcide")
+ ;;(setq lsp-haskell-server-args '())
  ;; Comment/uncomment this line to see interactions between lsp client/server.
  (setq lsp-log-io t)
  ;; (setq lsp-auto-guess-root nil)
