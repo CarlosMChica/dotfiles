@@ -54,6 +54,7 @@
   :ensure t
   :hook (haskell-mode . lsp-deferred)
   :commands (lsp lsp-deferred)
+  :hook ((before-save . lsp-format-buffer))
   :config
   (setq lsp-enable-file-watchers nil)
   (setq lsp-log-io t)
@@ -63,7 +64,7 @@
   (setq lsp-signature-render-documentation t)
   )
 
-(use-package helm-lsp 
+(use-package helm-lsp
   :ensure t
   :commands helm-lsp-workspace-symbol
   )
