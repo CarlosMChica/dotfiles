@@ -6,7 +6,7 @@
     GDK_SCALE = "2";
     GDK_DPI_SCALE = "0.5";
     QT_AUTO_SCREEN_SCALE_FACTOR = "1";
-    XCURSOR_SIZE= "128";
+    XCURSOR_SIZE= "32";
    };
 
    services.xserver = {
@@ -71,6 +71,8 @@
     lxappearance
     xorg.xcursorthemes
     vanilla-dmz
+    nordic
+    paper-icon-theme
   ];
 
 }
