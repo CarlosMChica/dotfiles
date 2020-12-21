@@ -18,15 +18,14 @@
       grub.version = 2;
       grub.device = "/dev/sda";
     };
-    initrd.luks.devices = [
-      {
-        name = "root";
+    initrd.luks.devices = {
+      root = {
         # blkid gives you back the disk id
         device = "/dev/disk/by-uuid/ab20dece-a988-4943-9327-28c1aca33e8c";
         preLVM = true;
         allowDiscards = true;
-      }
-    ];
+      };
+    };
   };
 
 }
