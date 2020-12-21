@@ -288,7 +288,7 @@ mode "$mode_workspaces" {
 bindsym $mod+Shift+w mode "$mode_workspaces"
 
 bar {
-  output HDMI-0
+  output primary
   position bottom
   tray_output none
   status_command i3blocks -c ~/dotfiles/config/i3blocks/bottom
@@ -326,5 +326,3 @@ bar {
   }
 }
 
-# polybar
-# exec --no-startup-id ~/dotfiles/config/polybar/launch.sh
