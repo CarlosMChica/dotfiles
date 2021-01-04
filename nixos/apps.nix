@@ -11,7 +11,6 @@
     vlc
     baobab
     gnome3.file-roller
-    slack
   ];
 
 }

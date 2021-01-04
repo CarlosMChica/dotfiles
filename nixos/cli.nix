@@ -25,7 +25,6 @@
     youtube-dl
     exfat
     tldr
-    glances
     killall
     ncdu
     intel-gpu-tools
@@ -33,6 +32,10 @@
     glxinfo
     kubectl
     bazel
+    fd
+    procs
+    bandwhich
+    meld
   ];
 
   programs = {
