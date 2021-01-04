@@ -26,7 +26,7 @@
 
   (if programming-mode
     (progn
-      (prettify-symbols-mode +1)
+      ;;(prettify-symbols-mode +1)
       (whitespace-mode +1)
       (diff-hl-mode +1)
       (diff-hl-margin-mode +1)
@@ -41,10 +41,11 @@
       (origami-mode +1)
       (initialize-project-tags)
       (electric-pair-mode +1)
-      (if (not (version< emacs-version "26")) (display-fill-column-indicator-mode +1))
-      (highlight-indent-guides-mode +1))
+      ;;(if (not (version< emacs-version "26")) (display-fill-column-indicator-mode +1))
+      (highlight-indent-guides-mode +1)
+      )
     (progn
-      (prettify-symbols-mode -1)
+      ;;(prettify-symbols-mode -1)
       (whitespace-mode -1)
       (diff-hl-mode -1)
       (diff-hl-margin-mode -1)
@@ -58,8 +59,9 @@
       (company-mode -1)
       (origami-mode -1)
       (electric-pair-mode -1)
-      (if (not (version< emacs-version "26")) (display-fill-column-indicator-mode -1))
-      (highlight-indent-guides-mode -1))))
+      ;;(if (not (version< emacs-version "26")) (display-fill-column-indicator-mode -1))
+      (highlight-indent-guides-mode -1)
+      )))
 
 (defun set-compile-for (mode command)
   (add-hook mode

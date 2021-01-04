@@ -1,42 +1,46 @@
-(defun my/setup-tide ()
-  (tide-setup)
-  (tide-mode)
-  (eldoc-mode +1)
-  (tide-hl-identifier-mode +1)
+;; (defun my/setup-tide ()
+;;   (tide-setup)
+;;   (tide-mode)
+;;   (eldoc-mode +1)
+;;   (tide-hl-identifier-mode +1)
 
-  ; Bind tide keys
-  (evil-leader/set-key "b" 'tide-jump-to-definition)
-  (evil-leader/set-key "7" 'tide-references)
+;;   ; Bind tide keys
+;;   (evil-leader/set-key "b" 'tide-jump-to-definition)
+;;   (evil-leader/set-key "7" 'tide-references)
 
-  (location-list-buffer (rx bos "*tide-"))
+;;   (location-list-buffer (rx bos "*tide-"))
 
-  (setq
-    company-tooltip-align-annotations t
-    tide-format-options '(:indentSize 2 :tabSize 2))
+;;   (setq
+;;     company-tooltip-align-annotations t
+;;     tide-format-options '(:indentSize 2 :tabSize 2))
 
-;  (add-hook 'before-save-hook 'tide-format-before-save)
-  (add-hook
-    'flycheck-mode-hook
-    (lambda () (progn
-                 (flycheck-add-mode 'typescript-tslint 'typescript-mode)))))
+;; ;  (add-hook 'before-save-hook 'tide-format-before-save)
+;;   (add-hook
+;;     'flycheck-mode-hook
+;;     (lambda () (progn
+;;                  (flycheck-add-mode 'typescript-tslint 'typescript-mode)))))
 
 (use-package
   typescript-mode
   :ensure t
   :pin melpa-stable
-  :mode ("\\.tsx?" . typescript-mode)
+  :mode ("\\.ts[x]?" . typescript-mode)
   :config
 
   (setq typescript-indent-level 2)
+  (setq typescript-indent-switch-clauses nil)
+  (setq typescript-indent-list-items nil)
+  (setq typescript-auto-indent-flag nil)
   (set-compile-for 'typescript-mode "yarn test")
+  (add-hook 'typescript-mode-hook 'programming-mode)
 
-  (use-package
-    tide
-    :ensure t
-    :pin melpa-stable
-    :config
-    (set-company-backend-for 'typescript-mode-hook 'company-tide)
-    (add-hook 'typescript-mode-hook 'programming-mode)
-    (add-hook 'typescript-mode-hook 'my/setup-tide)))
+  ;; (use-package
+  ;;   tide
+  ;;   :ensure t
+  ;;   :pin melpa-stable
+  ;;   :config
+  ;;   ;; (set-company-backend-for 'typescript-mode-hook 'company-tide)
+  ;;   (add-hook 'typescript-mode-hook 'my/setup-tide))
+  )
 
 (provide 'init-typescript)

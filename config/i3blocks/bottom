@@ -34,33 +34,6 @@ align=center
 separator=false
 separator_block_width=7
 
-[Temperature]
-command=$HOME/.local/bin/$BLOCK_NAME "id 0" " "
-interval=30
-min_width=99.9°C
-
-[separator]
-
-[Cpu]
-command=$HOME/.local/bin/$BLOCK_NAME " "
-interval=5
-min_width=100%
-
-[separator]
-
-[Memory]
-command=$HOME/.local/bin/$BLOCK_NAME " "
-interval=10
-min_width= 16G
-
-[separator]
-
-[Wifi]
-command=$HOME/.local/bin/$BLOCK_NAME "睊 " "  "
-interval=99
-
-[separator]
-
 [Bandwidth]
 min_width=999.9MBs 999.9MBs
 command=$HOME/.local/bin/$BLOCK_NAME " " " " 
