@@ -74,4 +74,13 @@
     dates = "weekly";
     options = "--delete-older-than 30d";
   };
+
+  security.pam.loginLimits = [
+    {
+      domain = "*";
+      type = "soft";
+      item = "nofile";
+      value = "4096";
+    }
+  ];
 }
