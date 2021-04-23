@@ -16,9 +16,9 @@ set $WS9 "9  "
 set $WS0 "10  "
 
 # use workspaces on different monitors
-workspace $WS5 output DP-0
-workspace $WS2 output DP-2
-workspace $WS1 output HDMI-0
+workspace $WS5 output DP-2
+workspace $WS2 output DP-4
+workspace $WS1 output DP-0
 
 # Default terminal emulator
 set $TERMINAL urxvt
