@@ -44,6 +44,7 @@
 
   systemd.extraConfig = ''
     ShutdownWatchdogSec=20s
+    DefaultLimitNOFILE=20000
   '';
 
 }

@@ -18,7 +18,7 @@
     layout = "us";
     exportConfiguration = true;
     libinput = {
-      disableWhileTyping = true;
+      touchpad.disableWhileTyping = true;
       enable = true;
     };
     windowManager.i3 = {
