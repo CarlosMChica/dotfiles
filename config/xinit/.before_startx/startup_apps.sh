@@ -5,3 +5,4 @@ parcellite -n &
 google-chrome-stable &
 slack &
 nm-applet &
+authy &
