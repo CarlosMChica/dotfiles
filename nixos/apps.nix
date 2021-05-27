@@ -11,6 +11,11 @@
     vlc
     baobab
     gnome3.file-roller
+    authy
+    kodi
+    tvheadend
+    kodiPlugins.pvr-iptvsimple
   ];
 
+  services.xserver.desktopManager.kodi.enable = true;
 }

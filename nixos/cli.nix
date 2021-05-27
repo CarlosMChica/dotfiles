@@ -42,4 +42,9 @@
     bash.enableCompletion = true;
     tmux.enable = true;
   };
+
+  nixpkgs.config.permittedInsecurePackages = [
+    "ffmpeg-3.4.8"
+  ];
+
 }
