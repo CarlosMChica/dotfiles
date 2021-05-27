@@ -1,10 +1,10 @@
 (require 'init-programming-mode)
 
 (use-package
-  bazel-mode
+  bazel
   :ensure t
   :defer t
-  :mode "\\.ba?ze?l$"
+  :mode ("\\.ba?ze?l$" . bazel-mode)
   :config
   (add-hook 'bazel-mode-hook 'programming-mode)
 )
